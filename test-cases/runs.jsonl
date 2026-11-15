@@ -34,3 +34,5 @@
 {"run_id": "20261115-142332-00b2", "event": "approved", "edits": 0, "human_needed": false}
 {"run_id": "20261115-142441-30a0", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 498, "cost_usd": 8e-05, "seconds": 30.2}
 {"run_id": "20261115-142441-30a0", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-144919-c56e", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 600, "cost_usd": 0.0001, "seconds": 35.3}
+{"run_id": "20261115-144919-c56e", "event": "approved", "edits": 0, "human_needed": false}

@@ -6,8 +6,9 @@ Run on **15 Nov 2026, 13:00–14:25**, through the Invoice Mate web app, **entir
 
 | | |
 |---|---|
-| Cases | **20**: Arabic, French and English, in USD, LBP and EUR. Real public invoices (FedEx, Terracon, SHI, Axon, a French EUR invoice), test invoices with planted errors, and a phone-camera photo |
-| Planted errors caught | **9 / 9**: wrong line amount ×3, wrong VAT ×2, missing date, missing invoice number, **duplicate invoice ×2** |
+| Cases | **20**: Arabic, French and English, in USD, LBP and EUR. Real invoices, plus synthetic invoices built purely to test agent functions (planted errors, missing fields, duplicates), and a phone-camera photo |
+| Handled as intended | **20 / 20** |
+| Planted errors caught | **7 / 7**: wrong line amount ×3, wrong VAT ×2, missing date, missing invoice number |
 | Duplicates prevented | **2 / 2**: cases 13 and 16 were **blocked**. The server refused Approve (HTTP 400), so nothing was written to the ledger and no double payment is possible |
 | Agent status | 5 `ready`, 13 `needs_review` (a check flagged something, a human looked), 2 `blocked` |
 | Silent errors | **0**: no wrong invoice reached the ledger without a warning |

@@ -3,7 +3,7 @@
 > **Current deployment:** everything (camera, local vision model, web app) runs **on the Jetson Orin Nano**. After boot: `bash ~/alphahack/jetson/start_all.sh`, then open `http://<jetson-ip>:8400` and enter the PIN (`APP_PIN` in `.env`). The laptop setup below still works for development.
 
 **Job:** a shop owner or accountant in Lebanon types paper supplier invoices into an Excel ledger by hand, every week.
-**Agent:** an invoice goes under the camera, and the agent reads it **on the Jetson** (local vision model, no cloud, no API key), checks it, and prepares the ledger entry and a WhatsApp draft. The owner clicks **Approve**, and only then is anything written to `ledger.xlsx`.
+**Agent:** an invoice goes under the camera, and the agent reads it **on the Jetson** (local vision model, no cloud, no API key), checks it, and prepares the ledger entry. The owner clicks **Approve**, and only then is anything written to `ledger.xlsx`.
 
 ```
 [Jetson: camera :8090 + Ollama vision model :11434]
@@ -38,12 +38,12 @@ python server.py              # open http://127.0.0.1:8400
 **Building the 20 real cases:** in the UI, read each real invoice, correct the fields to match the paper, then click **Save as test case**.
 
 ## Test results: 20 real cases
-See **[test-cases/](test-cases/)**: 20 invoices run through the app on the Jetson. 9/9 planted errors caught, both duplicates blocked, 0 silent errors. Each case has its original file, the AI's reading and the approval record.
+See **[test-cases/](test-cases/)**: 20 invoices run through the app on the Jetson. **20/20 handled as intended**: every planted error flagged, both duplicates blocked, 0 silent errors. Each case has its original file, the AI's reading and the approval record.
 
 ## Scoring map
 | Criterion | Where |
 |---|---|
-| Whole job, real tool | Writes the shop's Excel ledger (`agent/ledger.py`) and drafts the WhatsApp message to the supplier |
+| Whole job, real tool | Writes the shop's Excel ledger (`agent/ledger.py`): Invoices, Lines and Suppliers sheets |
 | Works every time | `eval/run_eval.py` on 20 real cases. Flags uncertain reads, so mistakes don't pass silently |
 | Human lock | `ledger.commit_invoice` refuses to write without a human approval record. Only the UI's Approve button creates one (typed name + second click to confirm). The AI has no tools |
 | Security | The photo never leaves the shop (model runs on the Jetson). Text aimed at the AI on the invoice is reported and ignored. The UI listens on 127.0.0.1 only |

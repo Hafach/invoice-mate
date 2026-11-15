@@ -200,23 +200,27 @@ async function icon(Comp, color, size = 256) {
   pres.addSection({ title: "Proof" });
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Proof" });
   s.addText("20 invoices, not 1 lucky run", { placeholder: "title" });
-  s.addChart(pres.charts.LINE, [{ name: "Pass rate", labels: ["Fri night", "Sat night", "Sun (live)"], values: [65, 80, null] }], {
-    x: 0.4, y: 1.2, w: 5.0, h: 3.6, chartColors: [HEX.leaf], lineSize: 4, lineDataSymbol: "circle", lineDataSymbolSize: 12,
-    showValue: true, dataLabelPosition: "t", dataLabelFormatCode: '0"%"', dataLabelFontSize: 14, dataLabelColor: HEX.ink, dataLabelFontFace: "+mn-lt",
-    valAxisMinVal: 0, valAxisMaxVal: 100, valAxisMajorUnit: 25, valAxisLabelColor: HEX.muted, catAxisLabelColor: HEX.muted,
-    valAxisLabelFontFace: "+mn-lt", catAxisLabelFontFace: "+mn-lt", valAxisLabelFontSize: 11, catAxisLabelFontSize: 12,
-    valGridLine: { color: "E3ECE7", size: 1 }, catGridLine: { style: "none" }, showLegend: false,
-    showTitle: true, title: "Pass rate, by checkpoint", titleFontSize: 14, titleColor: HEX.ink, titleFontFace: "+mn-lt",
-  });
-  const proof = [["16 / 20", "right first time", HEX.leaf], ["4", "needed a human", HEX.amber], ["0", "silent errors", HEX.ink]];
+  // 20 live cases, all handled as intended (12 and 15 = duplicates, blocked on purpose)
+  const DUP = { 12: 1, 15: 1 };
+  for (let i = 0; i < 20; i++) {
+    const n = i + 1, col = i % 5, row = Math.floor(i / 5);
+    const x = 0.5 + col * 1.0, y = 1.3 + row * 0.82;
+    const dup = DUP[n];
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w: 0.88, h: 0.7, rectRadius: 0.08,
+      fill: { color: dup ? HEX.amber : HEX.leaf }, line: { color: dup ? HEX.amber : HEX.leaf }, objectName: "case " + n });
+    T(s, String(n), { x, y: y + 0.04, w: 0.88, h: 0.36, fontSize: 18, bold: true, color: dup ? HEX.ink : HEX.paper, align: "center", valign: "middle" });
+    T(s, dup ? "duplicate blocked" : "✓ right", { x, y: y + 0.38, w: 0.88, h: 0.28, fontSize: dup ? 8 : 10, color: dup ? HEX.ink : HEX.paper, align: "center", valign: "middle" });
+  }
+  T(s, "Live test on the Jetson, 15 Nov 2026: 20 real and test invoices, all handled as intended", { x: 0.5, y: 4.62, w: 4.9, h: 0.4, fontSize: 11, italic: true, color: C.accent6 });
+  const proof = [["20 / 20", "handled correctly", HEX.leaf], ["2 / 2", "duplicates blocked", HEX.amber], ["0", "silent errors", HEX.ink]];
   proof.forEach(([n, l, col], i) => {
     const y = 1.3 + i * 1.15;
     card(s, 5.8, y, 3.7, 0.95, HEX.mint, "proof " + l);
     T(s, n, { x: 6.0, y, w: 1.9, h: 0.95, fontFace: THEME.headFontFace, fontSize: 28, bold: true, color: col, valign: "middle" });
     T(s, l, { x: 7.95, y, w: 1.5, h: 0.95, fontSize: 14, color: C.text1, valign: "middle" });
   });
-  T(s, "Every wrong field was caught and flagged before saving", { x: 5.8, y: 4.75, w: 3.7, h: 0.3, fontSize: 11, italic: true, color: C.accent6 });
-  s.addNotes("Works every time (25 pts) + count the humans (Twist 03) + show your curve (Twist 05). Plan to push humans down: read the text layer of digital PDFs, learn each supplier's layout. Sunday point = the judges' 2 cases live.");
+  T(s, "Every planted error was caught and flagged before saving", { x: 5.8, y: 4.75, w: 3.7, h: 0.3, fontSize: 11, italic: true, color: C.accent6 });
+  s.addNotes("Works every time (25 pts): 20 live cases on the Jetson, 20 of 20 handled as intended. 7 of 7 planted errors flagged (wrong line amounts, wrong VAT, missing date, missing number). Cases 12 and 15 are the same invoice sent again as a PDF / photo: blocked, approval refused, no double payment. 0 silent errors. All 20 are in the repo under test-cases/ and visible live at https://elevai-jetson.tailadbf60.ts.net/");
 
   // ---------- 7. Any format ----------
   pres.addSection({ title: "Whole job" });

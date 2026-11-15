@@ -1,0 +1,31 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Nasr Dairy Products",
+  "invoice_number": "ND-7781",
+  "invoice_date": "2026-11-12",
+  "currency": "USD",
+  "subtotal": 104.0,
+  "discount": null,
+  "vat_amount": null,
+  "total": 104.0,
+  "lines": [
+    {
+      "description": "Labneh 1kg",
+      "quantity": 10,
+      "unit_price": 4.2,
+      "line_total": 42.0
+    },
+    {
+      "description": "Akkawi Cheese 1kg",
+      "quantity": 5,
+      "unit_price": 8.0,
+      "line_total": 40.0
+    },
+    {
+      "description": "Laban 2kg",
+      "quantity": 8,
+      "unit_price": 2.75,
+      "line_total": 22.0
+    }
+  ]
+}

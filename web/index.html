@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b3d2e">
+<title>Invoice Mate</title>
+<style>
+:root{--bg:#eef4f0;--panel:#fff;--ink:#102a21;--muted:#5b6f66;--line:#dbe7e0;--accent:#ffb000;--accent-ink:#102a21;
+--brand:#0b3d2e;--brand2:#1f7a5a;--glow:rgba(255,176,0,.35);
+--ok:#1a8a5a;--ok-bg:#e2f5ec;--warn:#8a5a00;--warn-bg:#fff3d6;--err:#c62f22;--err-bg:#fde6e2;--info:#1d5fa8;--info-bg:#e4eefb;
+--shadow:0 1px 2px rgba(11,61,46,.06),0 8px 24px rgba(11,61,46,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1713;--panel:#11231c;--ink:#e9f3ee;--muted:#93ab9f;--line:#1f3a2f;
+--brand:#06261c;--brand2:#2e9e75;--glow:rgba(255,176,0,.25);
+--ok:#5fd6a0;--ok-bg:#103626;--warn:#f2c46b;--warn-bg:#3a2d10;--err:#ff8a80;--err-bg:#3d1a18;--info:#8ab4f8;--info-bg:#15263d;
+--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}}
+[hidden]{display:none !important}*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:14px/1.5 "Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+background:radial-gradient(1200px 500px at 85% -10%,rgba(255,176,0,.10),transparent 60%),radial-gradient(900px 500px at -10% 10%,rgba(31,122,90,.12),transparent 60%),var(--bg);background-attachment:fixed;min-height:100vh}
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 22px;position:sticky;top:0;z-index:5;
+background:linear-gradient(110deg,var(--brand),#124d3a 60%,var(--brand2));color:#fff;box-shadow:0 6px 24px rgba(11,61,46,.25)}
+h1{font-size:20px;line-height:1.1;margin:0 14px 0 0;display:flex;align-items:center;gap:10px;letter-spacing:-.2px}
+h1 .logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#ffc940,#ff9500);font-size:19px;box-shadow:0 4px 14px rgba(255,176,0,.45)}
+h1 small{font-weight:500;font-size:11px;opacity:.75;letter-spacing:.3px}
+h2{font-size:16px;margin:0 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;letter-spacing:-.1px}
+.step{flex:none;width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;font-size:14px;font-weight:800;color:#0b3d2e;background:linear-gradient(135deg,#ffc940,#ff9500);box-shadow:0 3px 10px var(--glow)}
+.pill{padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-size:12px;white-space:nowrap;color:#e6f2ec}
+.pill b{font-variant-numeric:tabular-nums;color:#ffc940}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#9cb;vertical-align:1px}
+.dot.on{background:#3ee08f;box-shadow:0 0 0 3px rgba(62,224,143,.25);animation:pulse 2s infinite}.dot.off{background:#ff6b5e;box-shadow:0 0 0 3px rgba(255,107,94,.25)}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(62,224,143,0)}}
+main{display:grid;grid-template-columns:minmax(320px,1fr) minmax(380px,1.25fr);gap:18px;padding:18px;max-width:1500px;margin:auto}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.card{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);animation:rise .4s ease-out both}
+#result{animation-delay:.06s}.full{grid-column:1/-1}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+input,select,textarea{min-width:0;max-width:100%}
+.srcsw{display:inline-flex;padding:4px;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:99px;margin-bottom:12px}
+.srcsw button{border:0;border-radius:99px;padding:7px 16px;background:transparent;font-weight:600;color:var(--muted);box-shadow:none}
+.srcsw button.on{background:var(--brand);color:#fff;box-shadow:0 3px 10px rgba(11,61,46,.3)}
+.cam{position:relative;background:#06130f;border-radius:14px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center;color:#8fb3a3;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 4px rgba(31,122,90,.12)}
+.cam img{width:100%;height:100%;object-fit:contain}
+.cam::before{content:'';position:absolute;inset:12px;border:2px solid rgba(255,201,64,.6);border-radius:10px;pointer-events:none;z-index:1;
+-webkit-mask:linear-gradient(#000 0 0) top left/24px 24px no-repeat,linear-gradient(#000 0 0) top right/24px 24px no-repeat,linear-gradient(#000 0 0) bottom left/24px 24px no-repeat,linear-gradient(#000 0 0) bottom right/24px 24px no-repeat;
+mask:linear-gradient(#000 0 0) top left/24px 24px no-repeat,linear-gradient(#000 0 0) top right/24px 24px no-repeat,linear-gradient(#000 0 0) bottom left/24px 24px no-repeat,linear-gradient(#000 0 0) bottom right/24px 24px no-repeat}
+.phonecam{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/3;border:2px dashed var(--brand2);border-radius:14px;text-align:center;padding:16px;cursor:pointer;background:linear-gradient(180deg,var(--ok-bg),transparent);transition:transform .15s}
+.phonecam:hover{transform:scale(1.01)}.phonecam .big{font-size:18px;padding:16px 26px}
+#phonePreview{max-width:100%;max-height:260px;border-radius:10px;display:none;box-shadow:var(--shadow)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button,.btn{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 15px;border-radius:10px;cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s;text-decoration:none;display:inline-block}
+button:hover:not(:disabled),.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(11,61,46,.12)}
+button:active:not(:disabled){transform:translateY(0) scale(.98)}
+button.primary,.btn.primary{background:linear-gradient(135deg,#ffc940,#ff9500);border-color:transparent;color:#0b3d2e;box-shadow:0 6px 18px var(--glow)}
+button.primary:hover:not(:disabled),.btn.primary:hover{box-shadow:0 8px 24px rgba(255,176,0,.5)}
+button.big,.btn.big{padding:13px 22px;font-size:15px;border-radius:12px}button:disabled{opacity:.5;cursor:not-allowed}
+button.okb{background:linear-gradient(135deg,#22a06b,#147a50);border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(26,138,90,.35)}
+input,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:7px 10px;width:100%;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand2);box-shadow:0 0 0 3px rgba(31,122,90,.18)}
+select{cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.grid label{font-size:12px;color:var(--muted);font-weight:600}
+.grid .w2{grid-column:span 2}@media (max-width:600px){.grid{grid-template-columns:1fr 1fr}}
+fieldset{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;padding:8px 12px 12px;background:linear-gradient(180deg,rgba(31,122,90,.04),transparent)}
+legend{font-weight:700;font-size:13px;padding:2px 10px;border-radius:99px;background:var(--ok-bg);color:var(--brand2)}legend .cnt{color:var(--muted);font-weight:500;font-size:12px}
+.miss{display:none;color:var(--err);font-weight:700;font-size:11px;margin-left:6px;white-space:nowrap}.empty .miss{display:inline}
+.empty input,.empty select{border-color:var(--err);background:var(--err-bg)}td input.req-empty{border-color:var(--err);background:var(--err-bg)}
+h3.sub{font-size:14px;margin:16px 0 8px}.xrow{display:grid;grid-template-columns:1fr 2fr auto;gap:6px;margin:4px 0}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;background:var(--bg)}
+th:first-child{border-top-left-radius:10px}th:last-child{border-top-right-radius:10px}
+#ledger tr:hover td{background:var(--ok-bg)}td input{padding:5px 7px}.scroll{overflow-x:auto;border-radius:10px}
+.badge{padding:4px 11px;border-radius:99px;font-weight:700;font-size:12px;white-space:nowrap;text-transform:capitalize}
+.b-ready,.b-approved{background:var(--ok-bg);color:var(--ok)}.b-needs_review,.b-awaiting_approval{background:var(--warn-bg);color:var(--warn)}
+.b-blocked,.b-failed,.b-rejected{background:var(--err-bg);color:var(--err)}.b-reading,.b-queued{background:var(--info-bg);color:var(--info)}
+.f{padding:9px 12px;border-radius:12px;margin:6px 0;font-size:13px;border:1px solid transparent}
+.f-error{background:var(--err-bg);color:var(--err);border-color:rgba(198,47,34,.18)}
+.f-warn{background:var(--warn-bg);color:var(--warn);border-color:rgba(138,90,0,.15)}.f-info{background:var(--info-bg);color:var(--info);border-color:rgba(29,95,168,.15)}
+.thumb{max-width:100%;max-height:340px;border-radius:12px;border:1px solid var(--line);display:block;margin:auto;box-shadow:var(--shadow)}
+.muted{color:var(--muted)}.small{font-size:12px}.sep{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:16px 0}
+textarea{width:100%;min-height:90px;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
+.list{display:flex;flex-direction:column;gap:6px}
+.list div{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:var(--panel);transition:transform .12s,border-color .15s,box-shadow .2s}
+.list div:hover{transform:translateX(3px);border-color:var(--brand2);box-shadow:0 4px 14px rgba(11,61,46,.1)}
+.list div > span:first-child{font-weight:600}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:s 1s linear infinite;vertical-align:-2px}
+@keyframes s{to{transform:rotate(360deg)}}
+.lock{position:relative;border-radius:16px;padding:16px;margin-top:16px;border:2px solid transparent;
+background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(135deg,#ffc940,#1f7a5a) border-box;box-shadow:0 8px 26px var(--glow)}
+.saved{background:var(--ok-bg);color:var(--ok);border:2px solid var(--ok);border-radius:14px;padding:14px 16px;margin-top:12px;animation:rise .35s ease-out}
+.saved h3{margin:0 0 6px;font-size:16px}.saved ul{margin:0 0 8px 18px;padding:0}
+#toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:30;background:linear-gradient(135deg,#22a06b,#147a50);color:#fff;padding:13px 22px;border-radius:14px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:opacity .4s}
+tr.new td{animation:hl 4s ease-out}@keyframes hl{0%,60%{background:var(--ok-bg)}100%{background:transparent}}
+.cam.flash::after{content:'';position:absolute;inset:0;background:#fff;animation:fl .45s ease-out forwards;z-index:2}@keyframes fl{from{opacity:.9}to{opacity:0}}
+#shotMsg{min-height:20px;margin-top:10px}
+button.danger{color:var(--err);border-color:rgba(198,47,34,.35);background:var(--panel)}button.danger:hover:not(:disabled){background:var(--err-bg)}button.danger.armed,button.dangerfill{background:linear-gradient(135deg,#e5533f,#b3261e);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(198,47,34,.35)}.clearbox{margin-top:12px;padding:14px;border-radius:14px;background:var(--err-bg);border:1px solid rgba(198,47,34,.25);color:var(--err)}.clearbox input{max-width:160px;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+#empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:260px;border:2px dashed var(--line);border-radius:14px;text-align:center;font-size:15px;margin:0}
+#empty::before{content:'\1F9FE';font-size:46px}
+details.net summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+details.net summary::-webkit-details-marker{display:none}details.net summary h2{margin:0}
+details.net summary h2::after{content:'\25BE';font-size:12px;color:var(--muted);transition:transform .2s}details.net[open] summary h2::after{transform:rotate(180deg)}
+details.net[open] #netBody{margin-top:12px}
+@media (max-width:600px){
+/* compact sticky header: logo + name, status lights only */
+header{position:sticky;padding:10px 14px;gap:6px;flex-wrap:nowrap;padding-top:max(10px,env(safe-area-inset-top))}
+h1{font-size:17px;margin-right:auto}h1 .logo{width:32px;height:32px;font-size:16px}h1 small{display:none}
+header .pill:nth-child(n+4){display:none}
+header .pill{padding:6px 8px;font-size:0}header .pill .dot{margin:0;width:10px;height:10px}
+header .pill:nth-child(2)::after{content:'📷';font-size:13px;margin-left:5px}
+header .pill:nth-child(3)::after{content:'AI';font-size:11px;font-weight:700;margin-left:5px;color:#e6f2ec}
+main{padding:10px 10px calc(16px + env(safe-area-inset-bottom));gap:12px}
+.card{padding:14px;border-radius:16px}
+h2{font-size:15px}
+/* one-hand friendly controls */
+.srcsw{display:flex;width:100%}.srcsw button{flex:1;padding:10px 6px;font-size:13px}
+.row{gap:8px}
+.row>button.big,.row>.btn,#mode{flex:1 1 100%;width:100% !important;min-height:50px;font-size:16px;text-align:center}
+.phonecam{aspect-ratio:auto;min-height:220px}
+.phonecam .big{width:100%;min-height:58px;font-size:18px}
+button,.btn{min-height:42px}
+input,select,textarea{font-size:16px}  /* 16px stops the iPhone zooming into fields */
+.grid{grid-template-columns:1fr 1fr;gap:8px}
+fieldset{padding:6px 10px 10px}
+#empty{min-height:170px;font-size:14px}#empty::before{font-size:38px}
+.list div{padding:12px}#runs{max-height:330px;overflow-y:auto;padding-right:2px;overscroll-behavior:contain}
+.list div > span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.thumb{max-height:260px}
+/* decision: big buttons, the test-set tool is for the desktop */
+.lock{padding:14px}
+#who{max-width:none !important;flex:1 1 100%;min-height:48px}
+#btnApprove,#btnReject{flex:1 1 100%;min-height:54px;font-size:16px}
+.lock .row.small.muted{display:none}
+.scroll{-webkit-overflow-scrolling:touch;box-shadow:inset -12px 0 10px -10px rgba(11,61,46,.25)}
+#toast{width:calc(100% - 24px);text-align:center;top:max(12px,env(safe-area-inset-top))}
+.full .row{flex-wrap:wrap}.full .row .btn{flex:1 1 100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="toast" hidden></div>
+<div id="pinBox" hidden style="position:fixed;inset:0;z-index:20;background:var(--bg);display:grid;place-items:center">
+  <form id="pinForm" class="card" style="width:min(340px,90vw);text-align:center">
+    <h2 style="justify-content:center">🧾 Invoice Mate</h2><p class="muted">Enter the shop PIN to continue.</p>
+    <input id="pinInput" type="password" inputmode="numeric" autocomplete="current-password" placeholder="PIN" style="text-align:center;font-size:20px">
+    <div class="row" style="justify-content:center"><button class="primary big" type="submit">Unlock</button></div>
+    <p class="small" id="pinMsg" style="color:var(--err)"></p>
+  </form>
+</div>
+<header>
+  <h1><span class="logo">🧾</span><span>Invoice Mate<br><small>runs 100% in the shop</small></span></h1>
+  <span class="pill"><span id="camDot" class="dot"></span><span id="camTxt">camera…</span></span>
+  <span class="pill"><span id="keyDot" class="dot"></span><span id="keyTxt">AI…</span></span>
+  <span class="pill">runs <b id="sRuns">0</b></span>
+  <span class="pill">approved <b id="sAppr">0</b></span>
+  <span class="pill">needed a human edit <b id="sHuman">0</b></span>
+  <span class="pill">AI cost / invoice <b id="sCost">–</b> vs human <b id="sHumanCost">–</b></span>
+</header>
+<main>
+  <section class="card">
+    <h2><span class="step">1</span>Snap or upload the invoice</h2>
+    <div class="srcsw" role="tablist"><button id="srcJetson">Jetson camera</button><button id="srcPhone">This device's camera</button></div>
+    <div class="cam" id="camBox"><span id="camMsg">Connecting to Jetson camera…</span></div>
+    <label class="phonecam" id="phoneBox" hidden>
+      <img id="phonePreview" alt="last photo">
+      <span class="btn primary big">📷 Take photo</span>
+      <span class="small muted">Opens this phone's camera. Fill the screen with the whole invoice, flat, in good light.</span>
+      <input type="file" id="phoneFile" accept="image/*" capture="environment" hidden>
+    </label>
+    <div class="row">
+      <button class="primary big" id="btnCapture">📸 Capture &amp; read</button>
+      <label class="btn" title="Photo, PDF, Word, Excel, email (.eml), text, HTML, ZIP... (multi-page: up to 3 pages are read)">⬆ Upload file<input type="file" id="file" hidden></label>
+      <select id="mode" title="How much the AI reads" style="width:auto"><option value="full">Full detail (~40 s)</option><option value="fast">Fast: main fields (~20 s)</option></select>
+      <span class="muted small" id="sharp"></span>
+    </div>
+    <div id="shotMsg" class="small"></div>
+    <div class="sep"></div>
+    <h2>🕘 Recent invoices</h2>
+    <div class="list" id="runs"></div>
+  </section>
+
+  <section class="card" id="result">
+    <h2><span class="step">2</span>Check what the agent found</h2>
+    <p class="muted" id="empty">Capture or upload an invoice to start.</p>
+    <div id="detail" hidden>
+      <div class="row" style="margin-top:0;justify-content:space-between">
+        <span><span id="badge" class="badge"></span> <span class="muted small" id="runMeta"></span></span>
+        <span class="row" style="margin-top:0;gap:10px"><a class="small" id="imgLink" target="_blank">open photo</a><button class="small danger" id="btnDelete" title="Delete this test: the invoice, its files and its Excel rows">🗑 Delete</button></span>
+      </div>
+      <img class="thumb" id="thumb" alt="invoice photo" style="margin-top:10px">
+      <div id="findings" style="margin-top:10px"></div>
+      <div class="sep"></div>
+      <div id="form"></div>
+      <h3 class="sub">Items <span class="muted small" id="linesCnt"></span></h3>
+      <div class="scroll"><table><thead id="linesHead"></thead><tbody id="lines"></tbody></table></div>
+      <div class="row small"><button class="small" id="addLine">+ line</button><span class="muted">Columns:</span><span id="colToggles"></span></div>
+      <h3 class="sub">Other information found on this invoice <span class="muted small">(anything that has no field above)</span></h3>
+      <div id="extras"></div>
+      <button class="small" id="addExtra">+ field</button>
+      <div id="notesBox" class="small muted" style="margin-top:8px"></div>
+      <div id="waBox" hidden>
+        <div class="sep"></div>
+        <h2>WhatsApp draft to the supplier (you send it, not the agent)</h2>
+        <textarea id="wa"></textarea>
+        <div class="row"><button id="copyWa">Copy</button><a class="btn" id="openWa" target="_blank">Open in WhatsApp</a></div>
+      </div>
+      <div class="lock">
+        <h2><span class="step">3</span>Approve <span class="muted small" style="font-weight:500">🔒 nothing goes into Excel without your click</span></h2>
+        <div class="row" style="margin-top:0">
+          <input id="who" placeholder="Your name" style="max-width:180px">
+          <button class="okb big" id="btnApprove">✔ Approve → write to ledger.xlsx</button>
+          <button id="btnReject">✖ Reject</button>
+        </div>
+        <div class="row small"><span id="decisionMsg"></span></div>
+        <div class="row small muted">
+          Test set: <input id="caseName" placeholder="case name, e.g. shop-01" style="max-width:170px">
+          <button class="small" id="btnCase">Save as test case (values above = truth)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card full" id="netCard">
+    <details class="net"><summary><h2>📱 Connect a phone</h2><span id="netMode" class="badge"></span></summary>
+    <div id="netBody" class="small"></div></details>
+  </section>
+
+  <section class="card full">
+    <div class="row" style="margin-top:0;justify-content:space-between"><h2 style="margin:0">📊 Excel ledger <span class="muted small" style="font-weight:500">ledger.xlsx · Invoices</span></h2>
+      <span class="row" style="margin-top:0"><button class="danger" id="btnClearAll">🧹 Clear all test data</button><a class="btn primary" href="/api/ledger/download">⬇ Download Excel</a></span></div>
+    <div class="clearbox" id="clearBox" hidden>
+      <b>Delete ALL invoices and empty the Excel ledger?</b> <span class="small">A backup copy is kept on the Jetson.</span>
+      <div class="row"><input id="clearWord" placeholder="type DELETE" autocomplete="off"><button class="dangerfill" id="btnClearGo" disabled>Delete everything</button><button id="btnClearCancel">Cancel</button></div>
+      <div class="small" id="clearMsg"></div>
+    </div>
+    <div class="scroll"><table id="ledger"></table></div>
+  </section>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+let cfg = {}, cur = null, recheckTimer = null;
+const api = async (url, opt = {}) => {
+  // network hiccups (e.g. a flapping USB link -> ERR_NETWORK_CHANGED): retry reads automatically.
+  // Writes (POST) are not retried blindly, so an approval can never be sent twice.
+  let r;
+  for (let attempt = 0; ; attempt++) {
+    try { r = await fetch(url, opt); break; }
+    catch (e) {
+      if ((opt.method || 'GET') !== 'GET' || attempt >= 3) throw new Error('Network problem talking to the Jetson — try again (' + e.message + ')');
+      await new Promise(res => setTimeout(res, 700 * (attempt + 1)));
+    }
+  }
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401 && !url.startsWith('/api/login')) { showPin(); throw new Error('Locked: enter the PIN'); }
+  if (!r.ok) throw new Error(j.detail || r.statusText);
+  return j;
+};
+const post = (url, body) => api(url, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+// Dates are SHOWN and TYPED as DD/MM/YYYY; the app stores and compares YYYY-MM-DD internally (unchanged).
+const dmy = v => String(v ?? '').replace(/\b(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}:\d{2}))?(?::\d{2})?\b/g,
+  (_, y, m, d, t) => `${d}/${m}/${y}` + (t ? ` ${t}` : ''));
+const isoFromDmy = v => {
+  const t = String(v ?? '').trim(); if (!t) return null;
+  const m = t.match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{2}|\d{4})$/);
+  if (!m) return t;   // already YYYY-MM-DD or unreadable: let the server's date rules decide
+  const y = m[3].length === 2 ? '20' + m[3] : m[3];
+  return `${y}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+};
+const money = v => v == null ? '–' : '$' + Number(v).toFixed(4);
+
+function showPin() { $('#pinBox').hidden = false; $('#pinInput').focus(); }
+$('#pinForm').onsubmit = async e => {
+  e.preventDefault();
+  try { await post('/api/login', {pin: $('#pinInput').value}); $('#pinBox').hidden = true; $('#pinInput').value = ''; init(); }
+  catch (err) { $('#pinMsg').textContent = err.message; }
+};
+let started = false;
+async function init() {
+  const s = await api('/api/session');
+  if (!s.logged_in) { showPin(); return; }
+  if (started) return; started = true;
+  SPEC = await api('/api/fields'); buildForm(); loadNetwork(); setInterval(loadNetwork, 30000);
+  cfg = await api('/api/config');
+  $('#sHumanCost').textContent = `$${cfg.human_cost_usd} (${cfg.human_minutes} min)`;
+  checkCam(); setInterval(checkCam, 4000);
+  checkAI(); setInterval(checkAI, 10000);
+  refresh();
+}
+async function checkAI() {
+  const a = await api('/api/ai/health').catch(() => ({ok: false, error: 'server error'}));
+  $('#keyDot').className = 'dot ' + (a.ok ? 'on' : 'off');
+  $('#keyTxt').textContent = a.ok ? `AI on Jetson: ${a.model}` : (a.error || 'local AI offline');
+}
+let streamOn = false;
+// ---- camera source: the Jetson's USB camera, or the camera of the device that opened the page (phone)
+let SOURCE = null;
+function setSource(src) {
+  SOURCE = src;
+  try { localStorage.setItem('camSource', src); } catch {}
+  $('#srcJetson').classList.toggle('on', src === 'jetson'); $('#srcPhone').classList.toggle('on', src === 'phone');
+  $('#camBox').hidden = src !== 'jetson'; $('#btnCapture').hidden = src !== 'jetson'; $('#sharp').hidden = src !== 'jetson';
+  $('#phoneBox').hidden = src !== 'phone';
+  if (src === 'phone') { $('#camDot').className = 'dot on'; $('#camTxt').textContent = "This device's camera"; }
+  if (src !== 'jetson') { $('#camBox').innerHTML = ''; streamOn = false; }   // stop the video: saves the phone's data
+  else checkCam();
+}
+$('#srcJetson').onclick = () => setSource('jetson');
+$('#srcPhone').onclick = () => setSource('phone');
+(function initSource() {
+  let saved = null; try { saved = localStorage.getItem('camSource'); } catch {}
+  const touch = matchMedia('(pointer: coarse)').matches;
+  setTimeout(() => setSource(saved || (touch ? 'phone' : 'jetson')), 0);
+})();
+
+// Phone photos are 3000-4000 px / several MB: shrink to 2000 px JPEG on the phone before sending
+// (fast upload over venue Wi-Fi; the Jetson shrinks further anyway). Keeps the EXIF rotation.
+async function shrinkPhoto(file, maxSide = 2000) {
+  try {
+    const bmp = await createImageBitmap(file, {imageOrientation: 'from-image'});
+    const k = Math.min(1, maxSide / Math.max(bmp.width, bmp.height));
+    const cv = document.createElement('canvas'); cv.width = Math.round(bmp.width * k); cv.height = Math.round(bmp.height * k);
+    cv.getContext('2d').drawImage(bmp, 0, 0, cv.width, cv.height);
+    const blob = await new Promise(res => cv.toBlob(res, 'image/jpeg', 0.88));
+    return blob || file;
+  } catch { return file; }   // old browser: send the original
+}
+$('#phoneFile').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return; e.target.value = '';
+  shotMsg('<span class="spin"></span> Sending the photo to the Jetson…');
+  const blob = await shrinkPhoto(f);
+  $('#phonePreview').src = URL.createObjectURL(blob); $('#phonePreview').style.display = 'block';
+  const fd = new FormData(); fd.append('file', blob, 'phone-camera.jpg');
+  try {
+    const rec = await api(`/api/upload?mode=${$('#mode').value}&source=phone-camera`, {method: 'POST', body: fd});
+    shotMsg(`<span style="color:var(--ok)">✓ Photo sent (${Math.round(blob.size / 1024)} KB) — reading on the Jetson. You can take the next one.</span>`);
+    show(rec); refresh();
+    if (matchMedia('(max-width:900px)').matches) $('#result').scrollIntoView({behavior: 'smooth'});
+  } catch (err) { shotMsg(`<span class="f f-error" style="display:inline-block">${esc(err.message)}</span>`); }
+};
+
+async function loadNetwork() {
+  const n = await api('/api/network').catch(() => null);
+  if (!n) return;
+  const demo = n.mode === 'demo';
+  $('#netMode').className = 'badge ' + (demo ? 'b-approved' : 'b-queued');
+  $('#netMode').textContent = demo ? 'DEMO: own Wi-Fi' : n.mode === 'online' ? `ONLINE: ${n.wifi}` : n.mode;
+  const qr = n.password ? `<div class="row" style="gap:18px;align-items:flex-start">
+      <figure style="margin:0;text-align:center"><img src="/api/network/qr?what=wifi&t=${Date.now()}" width="150" height="150" alt="Wi-Fi QR"><figcaption>① Scan to join <b>${esc(n.ssid)}</b></figcaption></figure>
+      <figure style="margin:0;text-align:center"><img src="/api/network/qr?what=url" width="150" height="150" alt="App QR"><figcaption>② Scan to open the agent</figcaption></figure>
+      <div style="flex:1;min-width:200px"><p style="margin-top:0">Wi-Fi <b>${esc(n.ssid)}</b> · password <b>${esc(n.password)}</b><br>Then open <b>${esc(n.app_url)}</b> and choose <i>This device's camera</i>.</p>
+      <p class="muted">Only phones on this Wi-Fi (and the owner's devices) can open the agent. From anywhere else: “Access denied”.</p></div></div>` : '';
+  $('#netBody').innerHTML = demo ? qr
+    : `<p style="margin:0 0 6px">The Jetson is <b>online</b> (${esc(n.wifi || '—')}): updates and remote access work; phones can't join the agent's Wi-Fi now.</p>
+       <p class="muted" style="margin:0">To let phones connect, switch to DEMO mode: <code>ssh elevai@&lt;jetson&gt; "sudo bash ~/alphahack/jetson/net_mode.sh demo"</code> (back: <code>… net_mode.sh online</code>).</p>${qr ? '<details><summary>Preview of the phone instructions</summary>' + qr + '</details>' : ''}`;
+}
+
+async function checkCam() {
+  if (SOURCE === 'phone') return;
+  const h = await api('/api/camera/health').catch(() => ({ok: false}));
+  $('#camDot').className = 'dot ' + (h.ok ? 'on' : 'off');
+  $('#camTxt').textContent = h.ok ? `Jetson camera ${h.resolution?.join('×')}` : 'camera offline';
+  if (h.ok) {
+    const sharp = h.sharpness >= h.blur_threshold;
+    $('#sharp').innerHTML = sharp ? `<b style="color:var(--ok)">✓ sharp (${h.sharpness})</b> — whole page in the frame?`
+      : `<b style="color:var(--warn)">⚠ blurry (${h.sharpness})</b> — hold the page flat, 30–40 cm away, good light`;
+    if (!streamOn) { $('#camBox').innerHTML = `<img src="/api/camera/stream?t=${Date.now()}" alt="live camera">`; streamOn = true;
+      $('#camBox img').onerror = () => { streamOn = false; }; }
+  } else {
+    streamOn = false; $('#camBox').innerHTML = `<span>${esc(h.error || 'Jetson camera offline')}</span>`; $('#sharp').textContent = '';
+  }
+}
+async function refresh() {
+  // one failing panel must never stop the run list from updating
+  const safe = (p, dflt) => api(p).catch(e => { console.warn(p, e); return dflt; });
+  const [runs, st, led] = await Promise.all([safe('/api/runs', []), safe('/api/stats', {}), safe('/api/ledger', {})]);
+  $('#sRuns').textContent = st.runs ?? '—'; $('#sAppr').textContent = st.approved ?? '—'; $('#sHuman').textContent = st.needed_human_edit ?? '—';
+  $('#sCost').textContent = money(st.avg_cost_usd);
+  pendingIds = new Set(runs.filter(r => ['queued', 'reading'].includes(r.state)).map(r => r.run_id));
+  $('#runs').innerHTML = runs.map(r => `<div data-id="${r.run_id}"><span>${esc(r.supplier || (pendingIds.has(r.run_id) ? 'reading…' : '—'))} <span class="muted small">${esc(dmy(r.created))}</span></span>
+    <span>${r.total ?? ''} ${esc(r.currency || '')} <span class="badge b-${r.state}">${pendingIds.has(r.run_id) ? '<span class="spin"></span> ' : ''}${r.state.replace('_', ' ')}</span></span></div>`).join('') || '<p class="muted">None yet.</p>';
+  document.querySelectorAll('#runs div[data-id]').forEach(d => d.onclick = () => openRun(d.dataset.id));
+  const inv = led.Invoices || [];
+  const cols = ['Invoice date', 'Supplier', 'Invoice no.', 'Currency', 'Subtotal', 'VAT', 'Total', 'Total LBP', 'Lines', 'Approved by', 'Approved at', 'Human edits'];
+  $('#ledger').innerHTML = `<tr><th title="Row number in the Excel sheet">Excel row</th>${cols.map(c => `<th>${c}</th>`).join('')}</tr>` +
+    (inv.map((r, i) => [r, i + 2]).reverse().map(([r, n]) => `<tr data-run="${esc(r['Run id'])}"${r['Run id'] === lastSaved ? ' class="new"' : ''}><td><b>${n}</b></td>${cols.map(c => `<td>${esc(/date|at$/i.test(c) ? dmy(r[c]) : r[c])}</td>`).join('')}</tr>`).join('')
+     || `<tr><td colspan=13 class="muted">Empty: approved invoices appear here.</td></tr>`);
+}
+let pendingIds = new Set(); let lastSaved = null;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; t.style.opacity = 1;
+  clearTimeout(toast.h); toast.h = setTimeout(() => { t.style.opacity = 0; setTimeout(() => t.hidden = true, 400); }, 5000); }
+function flash() { const b = $('#camBox'); b.classList.remove('flash'); void b.offsetWidth; b.classList.add('flash'); }
+function shotMsg(html) { $('#shotMsg').innerHTML = html; }
+async function takePhoto(force = false) {
+  $('#btnCapture').disabled = true;
+  try {
+    const rec = await api(`/api/capture?mode=${$('#mode').value}` + (force ? '&force=true' : ''), {method: 'POST'});
+    flash();
+    shotMsg(`<span style="color:var(--ok)">✓ Photo taken${rec.queue_position > 1 ? ` (#${rec.queue_position} in line)` : ''} — you can remove the paper and scan the next invoice.</span>`);
+    show(rec); refresh();
+  } catch (e) {
+    const blurry = e.message.startsWith('Photo too blurry');
+    shotMsg(`<span class="f ${blurry ? 'f-warn' : 'f-error'}" style="display:inline-block">${esc(e.message)}</span>` +
+      (blurry ? ' <button id="btnForce" class="small">Read anyway</button>' : ''));
+    if (blurry) $('#btnForce').onclick = () => takePhoto(true);
+  } finally { setTimeout(() => { $('#btnCapture').disabled = false; }, 700); }
+}
+$('#btnCapture').onclick = () => takePhoto();
+$('#file').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  const fd = new FormData(); fd.append('file', f); e.target.value = '';
+  try { const rec = await api(`/api/upload?mode=${$('#mode').value}`, {method: 'POST', body: fd}); shotMsg(`<span style="color:var(--ok)">✓ ${esc(f.name)} received${rec.total_pages > 1 ? ` (${rec.total_pages} pages)` : ''} — reading on the Jetson.</span>`); show(rec); refresh(); }
+  catch (err) { shotMsg(`<span class="f f-error" style="display:inline-block">${esc(err.message)}</span>`); }
+};
+// poll while something is being read: the result appears by itself
+setInterval(async () => {
+  const curPending = cur && ['queued', 'reading'].includes(cur.state);
+  if (!pendingIds.size && !curPending) return;
+  try {
+    await refresh();
+    if (curPending) { const r = await api('/api/run/' + cur.run_id); if (r.state !== cur.state || r.reading_page !== cur.reading_page) show(r); }
+  } catch {}
+}, 1500);
+async function openRun(id) { show(await api('/api/run/' + id)); }
+
+function show(rec) {
+  if (!cur || cur.run_id !== rec.run_id) armDelete(false);
+  cur = rec; $('#empty').hidden = true; $('#detail').hidden = false;
+  $('#badge').className = 'badge b-' + rec.state; $('#badge').textContent = rec.state.replace('_', ' ');
+  const u = rec.usage || {};
+  const k = rec.doc_kind && !['jpeg', 'png', 'webp'].includes(rec.doc_kind) ? rec.doc_kind.toUpperCase() : '';
+  const docInfo = (rec.container === 'eml' ? ` · EMAIL${rec.inner_name && rec.doc_kind !== 'eml' ? ` → ${esc(rec.inner_name)}` : ' (text)'}`
+    : rec.container === 'zip' ? ` · ZIP → ${esc(rec.inner_name || '')}` : k ? ` · ${k}` : '')
+    + (rec.total_pages > 1 ? ` · ${rec.total_pages} pages` : '');
+  $('#runMeta').textContent = `${rec.run_id} · ${rec.source}${docInfo}` + (u.cost_usd != null ? ` · ${u.seconds}s · $${u.cost_usd}` : '') + (rec.meta?.blurry ? ' · ⚠ blurry photo' : '');
+  $('#thumb').src = '/api/image/' + rec.image;
+  $('#imgLink').href = '/api/image/' + (rec.original || rec.image);
+  $('#imgLink').textContent = rec.original ? `open original ${(rec.container || rec.doc_kind || 'file').toUpperCase()}` : 'open photo';
+  if (['queued', 'reading'].includes(rec.state)) {
+    $('#findings').innerHTML = `<div class="f f-info"><span class="spin"></span> ${rec.state === 'queued' ? 'Waiting in line' : 'Reading on the Jetson'}${(rec.pages || []).length > 1 ? ` — page ${rec.reading_page || 1} of ${rec.pages.length}` : ''} (${rec.mode === 'fast' ? '≈20' : '≈40'} s per ${(rec.pages || []).length > 1 ? 'page' : 'invoice'})… the result will appear here. You can already scan the next invoice.</div>`;
+    fill({}); $('#waBox').hidden = true;
+    document.querySelectorAll('#form [data-k], #lines input, #addLine, #extras input, #addExtra, #colToggles button').forEach(i => i.disabled = true);
+    $('#btnApprove').disabled = $('#btnReject').disabled = true; $('#decisionMsg').innerHTML = '';
+    return;
+  }
+  if (rec.state === 'failed') {
+    $('#findings').innerHTML = `<div class="f f-error">${esc(rec.error)}</div>`; fill({}); return;
+  }
+  const inv = rec.final || rec.extracted || {};
+  fill(inv);
+  const chk = rec.final_check || rec.check;
+  // once saved, the 'will be added' notes are history: the green panel says what was written
+  renderCheck(rec.state === 'approved' && chk ? {...chk, findings: chk.findings.filter(f => f.code !== 'new_supplier')} : chk);
+  const done = ['approved', 'rejected'].includes(rec.state);
+  document.querySelectorAll('#form [data-k], #lines input, #addLine, #extras input, #addExtra, #colToggles button').forEach(i => i.disabled = done);
+  $('#btnApprove').disabled = $('#btnReject').disabled = done;
+  $('#decisionMsg').innerHTML = rec.state === 'approved' ? savedPanel(rec)
+    : rec.state === 'rejected' ? `<span class="badge b-rejected">Rejected by ${esc(rec.rejection.by)}</span>` : '';
+  armApprove(false);
+}
+function savedPanel(rec) {
+  const s = rec.saved || {}, a = rec.approval;
+  return `<div class="saved"><h3>✓ Saved in ${esc(s.file || 'ledger.xlsx')}${s.verified ? ' — verified' : ''}</h3><ul>
+    ${s.row ? `<li><b>Invoices</b> sheet, <b>row ${s.row}</b>: ${esc(s.verified_supplier ?? '')} · total ${esc(s.verified_total ?? '')}</li>` : ''}
+    ${s.lines_written != null ? `<li><b>${s.lines_written}</b> item line(s) added to the <b>Lines</b> sheet</li>` : ''}
+    ${s.supplier_added ? '<li>New supplier added to the <b>Suppliers</b> sheet</li>' : ''}
+    <li>Approved by <b>${esc(a.approved_by)}</b> at ${esc(dmy(s.saved_at || a.at))} · ${a.edits} field(s) corrected by hand</li>
+    ${s.verified ? '<li>The file was re-opened and the row read back to confirm the save ✓</li>' : ''}</ul>
+    <a class="btn" href="/api/ledger/download">⬇ Download ledger.xlsx</a>
+    <button class="small" onclick="document.querySelector('#ledger tr[data-run=&quot;${esc(rec.run_id)}&quot;]')?.scrollIntoView({behavior:'smooth',block:'center'})">Show in table ↓</button></div>`;
+}
+let SPEC = null, lineCols = [];
+const WIDE = new Set(['supplier_name', 'supplier_address', 'customer_name', 'customer_address', 'bank_details', 'payment_terms']);
+const DOC_LABEL = {invoice: 'Invoice', tax_invoice: 'Tax invoice', receipt: 'Receipt', credit_note: 'Credit note', debit_note: 'Debit note',
+  delivery_note: 'Delivery note', proforma: 'Proforma', quotation: 'Quotation', purchase_order: 'Purchase order', statement: 'Statement', other: 'Other'};
+function buildForm() {
+  $('#form').innerHTML = SPEC.groups.map(g => `<fieldset data-group="${g.name}"><legend>${g.name} <span class="cnt"></span></legend><div class="grid">` +
+    g.fields.map(f => `<div class="${WIDE.has(f.key) ? 'w2' : ''}" data-f="${f.key}"><label>${esc(f.label)}${f.type === 'date' ? ' <span class="muted">(DD/MM/YYYY)</span>' : ''}<span class="miss">● Not on invoice</span></label>` +
+      (f.type === 'enum' ? `<select data-k="${f.key}"><option value=""></option>${SPEC.doc_types.map(d => `<option value="${d}">${DOC_LABEL[d] || d}</option>`).join('')}</select>`
+        : `<input data-k="${f.key}"${f.type === 'num' ? ' data-n inputmode="decimal"' : ''}${f.type === 'date' ? ' data-date="1" placeholder="DD/MM/YYYY"' : ''}>`) + `</div>`).join('') + `</div></fieldset>`).join('');
+}
+function markMissing() {
+  document.querySelectorAll('#form [data-f]').forEach(d => {
+    const el = d.querySelector('[data-k]'); d.classList.toggle('empty', !String(el.value).trim());
+  });
+  document.querySelectorAll('#form fieldset').forEach(fs => {
+    const all = fs.querySelectorAll('[data-f]').length, found = all - fs.querySelectorAll('[data-f].empty').length;
+    fs.querySelector('.cnt').textContent = `${found} of ${all} found`;
+  });
+  document.querySelectorAll('#lines input').forEach(i => {
+    const core = SPEC.line_fields.find(f => f.key === i.dataset.l)?.core;
+    i.classList.toggle('req-empty', !!core && !i.value.trim());
+  });
+}
+function fill(inv) {
+  document.querySelectorAll('#form [data-k]').forEach(i => i.value = i.dataset.date ? dmy(inv[i.dataset.k]) : (inv[i.dataset.k] ?? ''));
+  const lines = inv.lines || [];
+  // optional item columns appear only when this invoice has them (the user can add them)
+  lineCols = SPEC.line_fields.filter(f => f.core || lines.some(l => l[f.key] != null && l[f.key] !== ''));
+  drawLines(lines);
+  $('#extras').innerHTML = ''; (inv.extra_fields || []).forEach(addExtra);
+  const notes = inv.notes || cur?.extracted?.notes || [];
+  $('#notesBox').innerHTML = notes.length ? '<b>Notes printed on the invoice:</b> ' + notes.map(esc).join(' · ') : '';
+  markMissing();
+}
+function drawLines(lines) {
+  $('#linesHead').innerHTML = `<tr>${lineCols.map(f => `<th>${esc(f.label)}</th>`).join('')}<th></th></tr>`;
+  $('#lines').innerHTML = ''; lines.forEach(addLine);
+  $('#linesCnt').textContent = lines.length ? `(${lines.length})` : '— none found';
+  $('#colToggles').innerHTML = SPEC.line_fields.filter(f => !lineCols.includes(f))
+    .map(f => `<button class="small" data-col="${f.key}">+ ${esc(f.label)}</button>`).join(' ');
+  document.querySelectorAll('#colToggles [data-col]').forEach(b => b.onclick = () => {
+    const kept = readLines(); lineCols = SPEC.line_fields.filter(f => lineCols.includes(f) || f.key === b.dataset.col);
+    drawLines(kept); markMissing();
+  });
+}
+function addLine(l = {}) {
+  const tr = document.createElement('tr');
+  tr.dataset.orig = JSON.stringify(l);
+  tr.innerHTML = lineCols.map(f => `<td><input data-l="${f.key}"${f.type === 'num' ? ' data-n inputmode="decimal"' : ''} value="${esc(l[f.key] ?? '')}"
+    style="${f.key === 'description' ? 'min-width:180px' : f.type === 'num' ? 'width:95px' : 'width:80px'}"></td>`).join('') +
+    `<td><button class="small" title="remove">✕</button></td>`;
+  tr.querySelector('button').onclick = () => { tr.remove(); scheduleRecheck(); };
+  $('#lines').appendChild(tr);
+}
+function addExtra(e = {}) {
+  const d = document.createElement('div'); d.className = 'xrow';
+  d.innerHTML = `<input data-x="label" placeholder="Label (e.g. Driver)" value="${esc(e.label ?? '')}"><input data-x="value" placeholder="Value" value="${esc(e.value ?? '')}"><button class="small" title="remove">✕</button>`;
+  d.querySelector('button').onclick = () => { d.remove(); scheduleRecheck(); };
+  $('#extras').appendChild(d);
+}
+$('#addLine').onclick = () => { addLine(); markMissing(); };
+$('#addExtra').onclick = () => addExtra();
+const num = v => { v = String(v).replace(/,/g, '').trim(); return v === '' ? null : (isNaN(+v) ? v : +v); };
+function readLines() {
+  return [...$('#lines').children].map(tr => {
+    const l = {...JSON.parse(tr.dataset.orig || '{}')};   // keeps values of hidden columns
+    tr.querySelectorAll('input').forEach(i => l[i.dataset.l] = i.hasAttribute('data-n') ? num(i.value) : (i.value.trim() || (i.dataset.l === 'description' ? '' : null)));
+    return l;
+  });
+}
+function readForm() {
+  const inv = {};
+  document.querySelectorAll('#form [data-k]').forEach(i => { const v = String(i.value).trim(); inv[i.dataset.k] = i.hasAttribute('data-n') ? num(v) : i.dataset.date ? isoFromDmy(v) : (v || null); });
+  inv.lines = readLines();
+  inv.extra_fields = [...$('#extras').children].map(d => ({label: d.querySelector('[data-x=label]').value.trim(), value: d.querySelector('[data-x=value]').value.trim()}))
+    .filter(x => x.label && x.value);
+  const e = cur?.extracted || {};
+  inv.notes = e.notes || [];
+  inv.readability = 'good'; inv.uncertain_fields = []; inv.instructions_in_image = e.instructions_in_image ?? null;
+  return inv;
+}
+function renderCheck(c) {
+  if (!c) return;
+  $('#findings').innerHTML = (c.findings.length ? c.findings.map(f => `<div class="f f-${f.level}">${esc(dmy(f.msg))}</div>`).join('')
+    : '<div class="f" style="background:var(--ok-bg);color:var(--ok)">✓ All checks passed: math, duplicates, supplier, prices.</div>');
+  $('#waBox').hidden = !c.whatsapp_draft;
+  if (c.whatsapp_draft) { $('#wa').value = c.whatsapp_draft; updateWa(); }
+}
+function updateWa() {
+  const phone = ($('#form input[data-k=supplier_phone]').value || '').replace(/\D/g, '');
+  $('#openWa').href = `https://wa.me/${phone}?text=${encodeURIComponent($('#wa').value)}`;
+}
+$('#wa').oninput = updateWa;
+$('#copyWa').onclick = () => navigator.clipboard.writeText($('#wa').value);
+function scheduleRecheck() {
+  if (!cur || ['approved', 'rejected', 'failed'].includes(cur.state)) return;
+  clearTimeout(recheckTimer);
+  recheckTimer = setTimeout(async () => renderCheck(await post(`/api/run/${cur.run_id}/recheck`, {invoice: readForm()})), 500);
+  armApprove(false);
+}
+$('#detail').addEventListener('input', e => { if (e.target.closest('#form, #lines, #extras')) { markMissing(); scheduleRecheck(); } });
+
+let armed = false;
+function armApprove(on) { armed = on; $('#btnApprove').textContent = on ? '⚠ Click again to confirm: write to ledger' : '✔ Approve → write to ledger.xlsx'; }
+$('#btnApprove').onclick = async () => {
+  if (!$('#who').value.trim()) { $('#decisionMsg').innerHTML = '<span class="f f-warn">Type your name first.</span>'; return; }
+  if (!armed) { armApprove(true); return; }
+  armApprove(false);
+  try {
+    const rec = await post(`/api/run/${cur.run_id}/approve`, {invoice: readForm(), approved_by: $('#who').value});
+    lastSaved = rec.run_id; show(rec); await refresh();
+    const s = rec.saved || {};
+    toast(`✓ Saved in ledger.xlsx — Invoices row ${s.row ?? ''}${s.verified ? ' (verified)' : ''}`);
+    document.querySelector(`#ledger tr[data-run="${rec.run_id}"]`)?.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+  catch (e) { $('#decisionMsg').innerHTML = `<span class="f f-error">${esc(e.message)}</span>`; }
+};
+$('#btnReject').onclick = async () => {
+  try { show(await post(`/api/run/${cur.run_id}/reject`, {invoice: {}, approved_by: $('#who').value || 'owner'})); refresh(); }
+  catch (e) { $('#decisionMsg').innerHTML = `<span class="f f-error">${esc(e.message)}</span>`; }
+};
+$('#btnCase').onclick = async () => {
+  try { const r = await post(`/api/run/${cur.run_id}/save_case`, {invoice: readForm(), case_name: $('#caseName').value});
+    $('#decisionMsg').innerHTML = `<span class="badge b-approved">Saved test case “${esc(r.case)}”</span>`; }
+  catch (e) { $('#decisionMsg').innerHTML = `<span class="f f-error">${esc(e.message)}</span>`; }
+};
+// --- delete test data (server keeps a backup; it refuses while an invoice is being read)
+let delArmed = false;
+function armDelete(on) { delArmed = on; $('#btnDelete').classList.toggle('armed', on);
+  $('#btnDelete').textContent = on ? '⚠ Click again to delete' : '🗑 Delete'; }
+function clearDetail() { cur = null; $('#detail').hidden = true; $('#empty').hidden = false; }
+$('#btnDelete').onclick = async () => {
+  if (!cur) return;
+  if (!delArmed) { armDelete(true); clearTimeout(armDelete.t); armDelete.t = setTimeout(() => armDelete(false), 4000); return; }
+  armDelete(false);
+  try { const r = await post(`/api/run/${cur.run_id}/delete`, {confirm: 'DELETE'});
+    clearDetail(); await refresh();
+    const rows = Object.values(r.ledger_rows || {}).reduce((a, b) => a + b, 0);
+    toast(`🗑 Invoice deleted${rows ? ` (and ${rows} Excel row${rows > 1 ? 's' : ''})` : ''}`); }
+  catch (e) { $('#decisionMsg').innerHTML = `<span class="f f-error">${esc(e.message)}</span>`; }
+};
+$('#btnClearAll').onclick = () => { $('#clearBox').hidden = false; $('#clearWord').value = ''; $('#btnClearGo').disabled = true; $('#clearMsg').textContent = ''; $('#clearWord').focus(); };
+$('#btnClearCancel').onclick = () => { $('#clearBox').hidden = true; };
+$('#clearWord').oninput = () => { $('#btnClearGo').disabled = $('#clearWord').value.trim().toUpperCase() !== 'DELETE'; };
+$('#btnClearGo').onclick = async () => {
+  $('#btnClearGo').disabled = true;
+  try { const r = await post('/api/reset', {confirm: $('#clearWord').value.trim().toUpperCase()});
+    $('#clearBox').hidden = true; clearDetail(); await refresh();
+    toast(`🧹 Cleared: ${r.runs} invoice${r.runs === 1 ? '' : 's'} and the Excel ledger`); }
+  catch (e) { $('#clearMsg').textContent = e.message; $('#btnClearGo').disabled = false; }
+};
+try { const w = localStorage.getItem('who'); if (w) $('#who').value = w; } catch {}
+$('#who').onchange = () => { try { localStorage.setItem('who', $('#who').value); } catch {} };
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "YONGFATT ENTERPRISE",
+  "invoice_date": "2018-12-25",
+  "currency": "MYR",
+  "total": 80.9,
+  "_source": "SROIE (ICDAR 2019) X00016469622",
+  "_note": "official labels: supplier, date, total only"
+}

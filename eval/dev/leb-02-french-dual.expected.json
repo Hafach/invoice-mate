@@ -1,0 +1,31 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Établissements Haddad & Fils S.A.R.L.",
+  "invoice_number": "FA-00942",
+  "invoice_date": "2026-11-09",
+  "currency": "USD",
+  "subtotal": 122.0,
+  "vat_amount": 13.42,
+  "total": 135.42,
+  "lines": [
+    {
+      "description": "Café moulu 500g",
+      "quantity": 12,
+      "unit_price": 6.5,
+      "line_total": 78.0
+    },
+    {
+      "description": "Thé noir 100 sachets",
+      "quantity": 8,
+      "unit_price": 3.75,
+      "line_total": 30.0
+    },
+    {
+      "description": "Sucre en morceaux 1kg",
+      "quantity": 10,
+      "unit_price": 1.4,
+      "line_total": 14.0
+    }
+  ],
+  "total_lbp": 12120090
+}

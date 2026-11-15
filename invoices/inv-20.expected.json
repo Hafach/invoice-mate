@@ -1,0 +1,17 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Hazleton Laboratories America, Inc.",
+  "invoice_date": "1984-03-19",
+  "currency": "USD",
+  "total": 1950.0,
+  "lines": [
+    {
+      "description": "14-Day Subacute (Single Dose) in Rats with B129",
+      "quantity": null,
+      "unit_price": null,
+      "line_total": 1950.0
+    }
+  ],
+  "_source": "RVL-CDIP (IIT-CDIP / Legacy Tobacco Documents)",
+  "_note": "truth read by hand; no invoice number printed"
+}

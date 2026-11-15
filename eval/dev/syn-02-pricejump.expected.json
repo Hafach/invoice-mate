@@ -1,0 +1,31 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Abou Khalil Trading s.a.r.l",
+  "invoice_number": "INV-2026-0451",
+  "invoice_date": "2026-11-13",
+  "currency": "USD",
+  "subtotal": 115.0,
+  "discount": null,
+  "vat_amount": 12.65,
+  "total": 127.65,
+  "lines": [
+    {
+      "description": "Sugar 1kg",
+      "quantity": 20,
+      "unit_price": 1.1,
+      "line_total": 22.0
+    },
+    {
+      "description": "Rice Basmati 5kg",
+      "quantity": 6,
+      "unit_price": 9.0,
+      "line_total": 54.0
+    },
+    {
+      "description": "Sunflower Oil 1.8L",
+      "quantity": 12,
+      "unit_price": 3.25,
+      "line_total": 39.0
+    }
+  ]
+}

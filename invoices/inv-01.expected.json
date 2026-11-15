@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "MR D.I.Y. (JOHOR) SDN BHD",
+  "invoice_date": "2019-01-12",
+  "currency": "MYR",
+  "total": 33.9,
+  "_source": "SROIE (ICDAR 2019) X00016469620",
+  "_note": "official labels: supplier, date, total only"
+}

@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "LIAN HING STATIONERY SDN BHD",
+  "invoice_date": "2018-03-27",
+  "currency": "MYR",
+  "total": 79.5,
+  "_source": "SROIE (ICDAR 2019) X51005453729",
+  "_note": "official labels: supplier, date, total only"
+}

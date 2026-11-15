@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "HON HWA HARDWARE TRADING",
+  "invoice_date": "2017-09-21",
+  "currency": "MYR",
+  "total": 10.4,
+  "_source": "SROIE (ICDAR 2019) X51005568881",
+  "_note": "official labels: supplier, date, total only"
+}

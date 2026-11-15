@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "C W KHOO HARDWARE SDN BHD",
+  "invoice_date": "2018-03-01",
+  "currency": "MYR",
+  "total": 21.2,
+  "_source": "SROIE (ICDAR 2019) X51005365179",
+  "_note": "official labels: supplier, date, total only"
+}

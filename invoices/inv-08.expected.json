@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "FUYI MINI MARKET",
+  "invoice_date": "2018-01-25",
+  "currency": "MYR",
+  "total": 9.0,
+  "_source": "SROIE (ICDAR 2019) X51005361895",
+  "_note": "official labels: supplier, date, total only"
+}

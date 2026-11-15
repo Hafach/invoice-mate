@@ -1,0 +1,30 @@
+{
+  "is_invoice": true,
+  "supplier_name": "شركة الأرز للمواد الغذائية ش.م.م",
+  "invoice_number": "2026/1187",
+  "invoice_date": "2026-11-11",
+  "currency": "LBP",
+  "subtotal": 8380000,
+  "vat_amount": 921800.0,
+  "total": 9301800.0,
+  "lines": [
+    {
+      "description": "سكر ١ كلغ",
+      "quantity": 20,
+      "unit_price": 98500,
+      "line_total": 1970000
+    },
+    {
+      "description": "أرز مصري ٥ كلغ",
+      "quantity": 5,
+      "unit_price": 712000,
+      "line_total": 3560000
+    },
+    {
+      "description": "زيت دوار الشمس ١.٨ ل",
+      "quantity": 10,
+      "unit_price": 285000,
+      "line_total": 2850000
+    }
+  ]
+}

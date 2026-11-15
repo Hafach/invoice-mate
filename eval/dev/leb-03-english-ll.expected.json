@@ -1,0 +1,30 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Saad Bakery Supplies",
+  "invoice_number": "SB-5531",
+  "invoice_date": "2026-11-13",
+  "currency": "LBP",
+  "subtotal": 9845000,
+  "vat_amount": null,
+  "total": 9845000,
+  "lines": [
+    {
+      "description": "Flour 25kg bag",
+      "quantity": 4,
+      "unit_price": 1790000,
+      "line_total": 7160000
+    },
+    {
+      "description": "Yeast 500g",
+      "quantity": 6,
+      "unit_price": 223750,
+      "line_total": 1342500
+    },
+    {
+      "description": "Sesame 1kg",
+      "quantity": 3,
+      "unit_price": 447500,
+      "line_total": 1342500
+    }
+  ]
+}

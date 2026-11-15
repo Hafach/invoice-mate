@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "SAM SAM TRADING CO",
+  "invoice_date": "2017-12-29",
+  "currency": "MYR",
+  "total": 14.1,
+  "_source": "SROIE (ICDAR 2019) X51005255805",
+  "_note": "official labels: supplier, date, total only"
+}

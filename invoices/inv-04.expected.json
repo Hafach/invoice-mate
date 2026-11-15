@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "AIK HUAT HARDWARE ENTERPRISE (SETIA ALAM) SDN BHD",
+  "invoice_date": "2017-06-15",
+  "currency": "MYR",
+  "total": 15.0,
+  "_source": "SROIE (ICDAR 2019) X51005268200",
+  "_note": "official labels: supplier, date, total only"
+}

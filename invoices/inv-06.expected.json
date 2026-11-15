@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "LIGHTROOM GALLERY SDN BHD",
+  "invoice_date": "2017-12-20",
+  "currency": "MYR",
+  "total": 73.0,
+  "_source": "SROIE (ICDAR 2019) X51005301661",
+  "_note": "official labels: supplier, date, total only"
+}

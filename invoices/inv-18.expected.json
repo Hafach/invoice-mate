@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "FY EAGLE ENTERPRISE",
+  "invoice_date": "2017-12-04",
+  "currency": "MYR",
+  "total": 7.0,
+  "_source": "SROIE (ICDAR 2019) X51005577192",
+  "_note": "official labels: supplier, date, total only"
+}

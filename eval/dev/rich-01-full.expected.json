@@ -1,0 +1,63 @@
+{
+  "is_invoice": true,
+  "document_type": "tax_invoice",
+  "supplier_name": "Khoury Distribution S.A.L.",
+  "invoice_number": "KD-24-07731",
+  "invoice_date": "2026-11-12",
+  "due_date": "2026-12-12",
+  "order_number": "AA-0458",
+  "supplier_tax_id": "3348271-601",
+  "customer_name": "Mini Market Al Amal",
+  "customer_tax_id": "1187420-601",
+  "currency": "USD",
+  "subtotal": 234.0,
+  "vat_rate": 11,
+  "vat_amount": 25.74,
+  "other_charges": 5.0,
+  "total": 264.74,
+  "amount_paid": 100.0,
+  "balance_due": 164.74,
+  "lines": [
+    {
+      "item_code": "CL-1101",
+      "description": "Detergent Clean+ 3L",
+      "quantity": 24,
+      "unit": "pcs",
+      "unit_price": 4.5,
+      "line_discount": null,
+      "line_total": 108.0
+    },
+    {
+      "item_code": "PT-2040",
+      "description": "Paper towels 6 rolls",
+      "quantity": 15,
+      "unit": "pack",
+      "unit_price": 3.2,
+      "line_discount": 5.0,
+      "line_total": 43.0
+    },
+    {
+      "item_code": "SB-0007",
+      "description": "Garbage bags 50L x20",
+      "quantity": 30,
+      "unit": "roll",
+      "unit_price": 1.1,
+      "line_discount": null,
+      "line_total": 33.0
+    },
+    {
+      "item_code": "DS-5512",
+      "description": "Dish soap 1L",
+      "quantity": 40,
+      "unit": "pcs",
+      "unit_price": 1.25,
+      "line_discount": null,
+      "line_total": 50.0
+    }
+  ],
+  "extra_fields_expected": [
+    "Driver",
+    "Vehicle",
+    "Warehouse"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "is_invoice": true,
+  "supplier_name": "Healthy Buildings International, Inc.",
+  "invoice_number": "CH0152",
+  "invoice_date": "1991-08-08",
+  "currency": "USD",
+  "total": 5910.0,
+  "lines": [
+    {
+      "description": "Consulting - three days at $1,000 per day",
+      "quantity": null,
+      "unit_price": null,
+      "line_total": 3000.0
+    },
+    {
+      "description": "Expenses - air fare, hotel and taxis",
+      "quantity": null,
+      "unit_price": null,
+      "line_total": 2910.0
+    }
+  ],
+  "_source": "RVL-CDIP (IIT-CDIP / Legacy Tobacco Documents)",
+  "_note": "truth read by hand"
+}

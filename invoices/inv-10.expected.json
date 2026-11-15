@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "BENS INDEPENDENT GROCER SDN. BHD",
+  "invoice_date": "2018-03-12",
+  "currency": "MYR",
+  "total": 77.2,
+  "_source": "SROIE (ICDAR 2019) X51005444033",
+  "_note": "official labels: supplier, date, total only"
+}

@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "MR. D.I.Y. SDN BHD",
+  "invoice_date": "2017-11-24",
+  "currency": "MYR",
+  "total": 3.9,
+  "_source": "SROIE (ICDAR 2019) X51005568884",
+  "_note": "official labels: supplier, date, total only"
+}

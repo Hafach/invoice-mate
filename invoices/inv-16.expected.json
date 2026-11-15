@@ -1,0 +1,9 @@
+{
+  "is_invoice": true,
+  "supplier_name": "VIVOPAC MARKETING SDN BHD",
+  "invoice_date": "2017-05-30",
+  "currency": "MYR",
+  "total": 18.8,
+  "_source": "SROIE (ICDAR 2019) X51005568898",
+  "_note": "official labels: supplier, date, total only"
+}

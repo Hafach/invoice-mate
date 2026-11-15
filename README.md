@@ -37,6 +37,9 @@ python server.py              # open http://127.0.0.1:8400
 
 **Building the 20 real cases:** in the UI, read each real invoice, correct the fields to match the paper, then click **Save as test case**.
 
+## Live agent
+**https://elevai-jetson.tailadbf60.ts.net/**: the app running on the Jetson. You can see all 20 tests and their results (all 20 right) and test the agent on your own invoice.
+
 ## Test results: 20 real cases
 See **[test-cases/](test-cases/)**: 20 invoices run through the app on the Jetson. **20/20 handled as intended**: every planted error flagged, both duplicates blocked, 0 silent errors. Each case has its original file, the AI's reading and the approval record.
 

@@ -1,0 +1,239 @@
+{
+  "run_id": "20261115-142332-00b2",
+  "created": "2026-11-15T14:23:32",
+  "source": "upload",
+  "meta": {
+    "filename": "english invoice and lbp currency.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-142332-00b2.jpg",
+  "pages": [
+    "20261115-142332-00b2.jpg"
+  ],
+  "original": "20261115-142332-00b2-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "18cdd0b164ce8fc895e7b4305f8581d94c6b6858c6d1764d2088b7675c8f5003",
+  "image_phash": "c008c01cc1a0d384e02468a4c58cc82402000000000000000000000000000000",
+  "started": "2026-11-15T14:23:32",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INV-2026-0042",
+    "invoice_date": "2026-11-14",
+    "due_date": "2026-12-14",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Cedar Digital Studio (fictional)",
+    "supplier_address": "Hamra Street, Beirut, Lebanon",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Phoenicia Trading Co. (fictional)",
+    "customer_address": "Dora Highway, Mount Lebanon",
+    "customer_tax_id": "1111111 (sample)",
+    "currency": "LBP",
+    "subtotal": 68915000,
+    "discount": null,
+    "vat_rate": 11,
+    "vat_amount": 7580650,
+    "other_charges": null,
+    "total": 76495650,
+    "total_lbp": 76495650,
+    "exchange_rate": null,
+    "payment_terms": "Payment within 30 days, in LBP. Bank: Sample Bank Lebanon (fictional) - Account: Cedar Digital Studio - IBAN: LB00 0000 0000 0000 0000 0000 (sample)",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Website landing page design",
+        "quantity": 1,
+        "unit_price": 26850000,
+        "line_total": 26850000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Logo and brand sheet",
+        "quantity": 1,
+        "unit_price": 17900000,
+        "line_total": 17900000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Monthly hosting and maintenance",
+        "quantity": 3,
+        "unit_price": 4475000,
+        "line_total": 13425000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Arabic/English translation (per page)",
+        "quantity": 8,
+        "unit_price": 1342500,
+        "line_total": 10740000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Sample invoice for illustration only. All names and numbers are made up."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 733,
+    "cost_usd": 0.00011,
+    "seconds": 41.2
+  },
+  "check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "usd_equivalent",
+        "msg": "≈ 854.7 USD at 89,500 LBP per dollar."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Cedar Digital Studio (fictional)”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INV-2026-0042",
+    "invoice_date": "2026-11-14",
+    "due_date": "2026-12-14",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Cedar Digital Studio (fictional)",
+    "supplier_address": "Hamra Street, Beirut, Lebanon",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Phoenicia Trading Co. (fictional)",
+    "customer_address": "Dora Highway, Mount Lebanon",
+    "customer_tax_id": "1111111 (sample)",
+    "currency": "LBP",
+    "subtotal": 68915000,
+    "discount": null,
+    "vat_rate": 11,
+    "vat_amount": 7580650,
+    "other_charges": null,
+    "total": 76495650,
+    "total_lbp": 76495650,
+    "exchange_rate": null,
+    "payment_terms": "Payment within 30 days, in LBP. Bank: Sample Bank Lebanon (fictional) - Account: Cedar Digital Studio - IBAN: LB00 0000 0000 0000 0000 0000 (sample)",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Website landing page design",
+        "quantity": 1,
+        "unit_price": 26850000,
+        "line_total": 26850000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Logo and brand sheet",
+        "quantity": 1,
+        "unit_price": 17900000,
+        "line_total": 17900000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Monthly hosting and maintenance",
+        "quantity": 3,
+        "unit_price": 4475000,
+        "line_total": 13425000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Arabic/English translation (per page)",
+        "quantity": 8,
+        "unit_price": 1342500,
+        "line_total": 10740000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Sample invoice for illustration only. All names and numbers are made up."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:24:25",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "usd_equivalent",
+        "msg": "≈ 854.7 USD at 89,500 LBP per dollar."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Cedar Digital Studio (fictional)”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 17,
+    "lines_written": 4,
+    "lines_sheet_rows": 48,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:24",
+    "verified": true,
+    "verified_total": 76495650,
+    "verified_supplier": "Cedar Digital Studio (fictional)",
+    "file_bytes": 15655
+  }
+}

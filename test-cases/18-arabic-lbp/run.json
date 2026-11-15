@@ -1,0 +1,301 @@
+{
+  "run_id": "20261115-142125-5a38",
+  "created": "2026-11-15T14:21:25",
+  "source": "upload",
+  "meta": {
+    "filename": "arabic invoice and lbp currency.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-142125-5a38.jpg",
+  "pages": [
+    "20261115-142125-5a38.jpg"
+  ],
+  "original": "20261115-142125-5a38-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "a0672671164eb7ece1be4bcd371078b1c15e8f5d5b96872db517fc0877759e8f",
+  "image_phash": "4204c61cce18fe7cd3a0d818cb68c70010f400d4000000000000000000000000",
+  "started": "2026-11-15T14:21:25",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INV-2026-0042",
+    "invoice_date": "2026-11-14",
+    "due_date": "2026-12-14",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "استندوبي الأرز الرقمي (وهمي)",
+    "supplier_address": "طريق الدورة، حلب لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "شركة فنياً للتجارة (وهمي)",
+    "customer_address": "شارع الحمرا، حلب لبنان",
+    "customer_tax_id": null,
+    "currency": "LBP",
+    "subtotal": 68915000,
+    "discount": null,
+    "vat_rate": 11,
+    "vat_amount": 7180650,
+    "other_charges": 0,
+    "total": 76495650,
+    "total_lbp": 76495650,
+    "exchange_rate": null,
+    "payment_terms": "الدفع خلال 30 يوماً بالليرة اللبنانية.",
+    "payment_method": "المصرف: صرف العينة (وهمي)",
+    "amount_paid": 7580650,
+    "balance_due": 76495650,
+    "bank_details": "IBAN: LB00 0000 0000 0000 0000 0000",
+    "lines": [
+      {
+        "description": "تصميم صفحات هويو لموقع إلكتروني",
+        "quantity": 1,
+        "unit_price": 26850000,
+        "line_total": 26850000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "تصميم شعار ودليل الهوية",
+        "quantity": 1,
+        "unit_price": 17900000,
+        "line_total": 17900000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "استضافة وصيانة شهرية",
+        "quantity": 3,
+        "unit_price": 13425000,
+        "line_total": 40275000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "ترجمة محتوى عربي/إنجليزي (للصفحة)",
+        "quantity": 8,
+        "unit_price": 10740000,
+        "line_total": 85920000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "الصفحة",
+        "value": "الصفحة 11 بالملتمة"
+      }
+    ],
+    "notes": [
+      "هذه فاتورة نموذجية للتوصیح فقط. وجميع الأسماء والأرقام وهمية.",
+      "الصفحة 11 بالملتمة"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 790,
+    "cost_usd": 0.00027,
+    "seconds": 97.1
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "info",
+        "code": "usd_equivalent",
+        "msg": "≈ 854.7 USD at 89,500 LBP per dollar."
+      },
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 170,945,000, which matches neither the subtotal (68,915,000) nor the total (76,495,650)."
+      },
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 68,915,000 - discount 0 + VAT 7,180,650 = 76,095,650, invoice total says 76,495,650."
+      },
+      {
+        "level": "warn",
+        "code": "vat_mismatch",
+        "msg": "VAT 7,180,650 is not 11% of 68,915,000 (= 7,580,650)."
+      },
+      {
+        "level": "warn",
+        "code": "balance_math",
+        "msg": "Total 76,495,650 - paid 7,580,650 = 68,915,000, but the balance printed is 76,495,650."
+      },
+      {
+        "level": "info",
+        "code": "vat_rate",
+        "msg": "VAT is 10.4% of the subtotal (standard rate 11%)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “استندوبي الأرز الرقمي (وهمي)”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INV-2026-0042",
+    "invoice_date": "2026-11-14",
+    "due_date": "2026-12-14",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "استندوبي الأرز الرقمي (وهمي)",
+    "supplier_address": "طريق الدورة، حلب لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "شركة فنياً للتجارة (وهمي)",
+    "customer_address": "شارع الحمرا، حلب لبنان",
+    "customer_tax_id": null,
+    "currency": "LBP",
+    "subtotal": 68915000,
+    "discount": null,
+    "vat_rate": 11,
+    "vat_amount": 7180650,
+    "other_charges": 0,
+    "total": 76495650,
+    "total_lbp": 76495650,
+    "exchange_rate": null,
+    "payment_terms": "الدفع خلال 30 يوماً بالليرة اللبنانية.",
+    "payment_method": "المصرف: صرف العينة (وهمي)",
+    "amount_paid": 7580650,
+    "balance_due": 76495650,
+    "bank_details": "IBAN: LB00 0000 0000 0000 0000 0000",
+    "lines": [
+      {
+        "description": "تصميم صفحات هويو لموقع إلكتروني",
+        "quantity": 1,
+        "unit_price": 26850000,
+        "line_total": 26850000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "تصميم شعار ودليل الهوية",
+        "quantity": 1,
+        "unit_price": 17900000,
+        "line_total": 17900000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "استضافة وصيانة شهرية",
+        "quantity": 3,
+        "unit_price": 13425000,
+        "line_total": 40275000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "ترجمة محتوى عربي/إنجليزي (للصفحة)",
+        "quantity": 8,
+        "unit_price": 10740000,
+        "line_total": 85920000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "الصفحة",
+        "value": "الصفحة 11 بالملتمة"
+      }
+    ],
+    "notes": [
+      "هذه فاتورة نموذجية للتوصیح فقط. وجميع الأسماء والأرقام وهمية.",
+      "الصفحة 11 بالملتمة"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:23:10",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "info",
+        "code": "usd_equivalent",
+        "msg": "≈ 854.7 USD at 89,500 LBP per dollar."
+      },
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 170,945,000, which matches neither the subtotal (68,915,000) nor the total (76,495,650)."
+      },
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 68,915,000 - discount 0 + VAT 7,180,650 = 76,095,650, invoice total says 76,495,650."
+      },
+      {
+        "level": "warn",
+        "code": "vat_mismatch",
+        "msg": "VAT 7,180,650 is not 11% of 68,915,000 (= 7,580,650)."
+      },
+      {
+        "level": "warn",
+        "code": "balance_math",
+        "msg": "Total 76,495,650 - paid 7,580,650 = 68,915,000, but the balance printed is 76,495,650."
+      },
+      {
+        "level": "info",
+        "code": "vat_rate",
+        "msg": "VAT is 10.4% of the subtotal (standard rate 11%)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “استندوبي الأرز الرقمي (وهمي)”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 16,
+    "lines_written": 4,
+    "lines_sheet_rows": 44,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:23",
+    "verified": true,
+    "verified_total": 76495650,
+    "verified_supplier": "استندوبي الأرز الرقمي (وهمي)",
+    "file_bytes": 15085
+  }
+}

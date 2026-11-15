@@ -1,0 +1,133 @@
+{
+  "run_id": "20261115-140351-f776",
+  "created": "2026-11-15T14:03:51",
+  "source": "upload",
+  "meta": {
+    "filename": "English LBP Invoice.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-140351-f776.jpg",
+  "pages": [
+    "20261115-140351-f776.jpg"
+  ],
+  "original": "20261115-140351-f776-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "blocked",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "a5e4a8b88870a20966357415b9f5c08aa32d817d8881ad63b9f4c3182a8c98bd",
+  "image_phash": "a200e000d00090909000f214c526c026c126a1a6018401cc00018900c006c046",
+  "started": "2026-11-15T14:03:51",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "TEST-LBP-001",
+    "invoice_date": "2026-11-14",
+    "due_date": "2026-11-21",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Demo Supply Company (fictional)",
+    "supplier_address": "Beirut, Lebanon",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Demo Mini-Market (fictional)",
+    "customer_address": "Byblos, Lebanon",
+    "customer_tax_id": null,
+    "currency": "LBP",
+    "subtotal": 6570000,
+    "discount": null,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 6570000,
+    "total_lbp": 6570000,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Dishwashing liquid, 1 L",
+        "quantity": 12,
+        "unit_price": 90000,
+        "line_total": 1080000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Laundry detergent, 2 kg",
+        "quantity": 6,
+        "unit_price": 450000,
+        "line_total": 2700000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Floor cleaner, 1 L",
+        "quantity": 10,
+        "unit_price": 135000,
+        "line_total": 1350000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Paper towels, pack of 2",
+        "quantity": 8,
+        "unit_price": 180000,
+        "line_total": 1440000,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "All amounts are in Lebanese pounds (LBP). No currency conversion applies.",
+        "value": "Fictional names and transaction. Tax treatment is a test assumption, not tax guidance. For software testing only. No payment is due."
+      }
+    ],
+    "notes": [
+      "All amounts are in Lebanese pounds (LBP). No currency conversion applies.",
+      "Fictional names and transaction. Tax treatment is a test assumption, not tax guidance. For software testing only. No payment is due."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 694,
+    "cost_usd": 0.00011,
+    "seconds": 39.1
+  },
+  "check": {
+    "status": "blocked",
+    "findings": [
+      {
+        "level": "info",
+        "code": "usd_equivalent",
+        "msg": "≈ 73.41 USD at 89,500 LBP per dollar."
+      },
+      {
+        "level": "error",
+        "code": "duplicate",
+        "msg": "Same supplier and invoice number as Demo Supply Company (fictional) #TEST-LBP-001 (2026-11-14, already in the ledger, 2026-11-15 13:46). Possible double payment."
+      }
+    ],
+    "whatsapp_draft": null
+  }
+}

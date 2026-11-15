@@ -1,0 +1,157 @@
+{
+  "run_id": "20261115-141743-5e57",
+  "created": "2026-11-15T14:17:43",
+  "source": "upload",
+  "meta": {
+    "filename": "real invoice english usd currency phoenix.jpeg",
+    "kind": "jpeg",
+    "pages": 1
+  },
+  "image": "20261115-141743-5e57.jpg",
+  "pages": [
+    "20261115-141743-5e57.jpg"
+  ],
+  "original": null,
+  "doc_kind": "jpeg",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "blocked",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "1f880799e506197d26c7985241ba4591f22841339e69f1fa4b2d379ebf1199b7",
+  "image_phash": "0180212021206120e120c100c10400006c444c744c340c4800c400c404440400",
+  "started": "2026-11-15T14:17:43",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INUS246263",
+    "invoice_date": null,
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Axon Enterprise Inc.",
+    "supplier_address": "PO BOX 29661, PHOENIX, AZ 85038-9661",
+    "supplier_phone": "1-480-991-0797, option 5, option 1",
+    "supplier_email": "airinquiries@axon.com",
+    "supplier_tax_id": "Q-480686",
+    "customer_name": "Stephenville Police Dept.",
+    "customer_address": "356 N Belknap St, Stephenville, TX 76401-3414, USA",
+    "customer_tax_id": "Q-480686",
+    "currency": "USD",
+    "subtotal": 8480.7,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": 0.0,
+    "total": 8480.7,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "FCA",
+    "payment_method": "Net 30 days",
+    "amount_paid": 0.0,
+    "balance_due": 8480.7,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "AXON FLEET 3 - ALPR LICENSE - 1",
+        "quantity": 14.0,
+        "unit_price": 2230.2,
+        "line_total": 7805.7,
+        "item_code": "80401",
+        "unit": "CAMERA",
+        "line_discount": null
+      },
+      {
+        "description": "AXON FLEET 3 - SERVICES - ALPR API INTEGRATION",
+        "quantity": 1.0,
+        "unit_price": 2700.0,
+        "line_total": 675.0,
+        "item_code": "100159",
+        "line_discount": null,
+        "unit": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Sales Amount",
+        "value": "8,480.70"
+      },
+      {
+        "label": "Misc. Charge",
+        "value": "0.00"
+      },
+      {
+        "label": "Discount",
+        "value": "0.00"
+      },
+      {
+        "label": "Sales Tax",
+        "value": "0.00"
+      },
+      {
+        "label": "Total",
+        "value": "8,480.70"
+      },
+      {
+        "label": "Amount Received",
+        "value": "0.00"
+      },
+      {
+        "label": "Payment Due",
+        "value": "31-May-24"
+      }
+    ],
+    "notes": [
+      "AXON FLEET 3 - ALPR LICENSE - 1",
+      "AXON FLEET 3 - SERVICES - ALPR API INTEGRATION"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [
+      "invoice_date",
+      "due_date"
+    ],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1677,
+    "output_tokens": 760,
+    "cost_usd": 0.00012,
+    "seconds": 42.3
+  },
+  "check": {
+    "status": "blocked",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "missing_invoice_date",
+        "msg": "Date not found on the invoice."
+      },
+      {
+        "level": "warn",
+        "code": "uncertain",
+        "msg": "AI not sure about: invoice_date, due_date"
+      },
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 1 (AXON FLEET 3 - ALPR LICENSE - 1): 14 x 2,230.2 = 31,222.8, invoice says 7,805.7."
+      },
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 2 (AXON FLEET 3 - SERVICES - ALPR API INTEG): 1 x 2,700 = 2,700, invoice says 675."
+      },
+      {
+        "level": "error",
+        "code": "duplicate",
+        "msg": "Same supplier and invoice number as Axon Enterprise Inc. #INUS246263 (no date, already in the ledger, 2026-11-15 13:01). Possible double payment."
+      }
+    ],
+    "whatsapp_draft": null
+  }
+}

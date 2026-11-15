@@ -1,0 +1,199 @@
+{
+  "run_id": "20261115-141515-f9fe",
+  "created": "2026-11-15T14:15:15",
+  "source": "upload",
+  "meta": {
+    "filename": "real terracon english invoice usd currency.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-141515-f9fe.jpg",
+  "pages": [
+    "20261115-141515-f9fe.jpg"
+  ],
+  "original": "20261115-141515-f9fe-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "59f4e1d5d1cea026eabbd66b6511c7e3cfd153e258ace0cabec9934e73c26266",
+  "image_phash": "8b00d301d8f0e1e2e1826190c990c223c61cf89601744e442c4b2cc1cf04cd06",
+  "started": "2026-11-15T14:15:15",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "TP13676",
+    "invoice_date": "2025-01-07",
+    "due_date": "2025-01-07",
+    "delivery_date": null,
+    "order_number": "95705",
+    "supplier_name": "Terracon Consultants, Inc.",
+    "supplier_address": "PO Box 959673, St Louis, MO 63195-9673",
+    "supplier_phone": "42-1249917",
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Binkley & Barfield",
+    "customer_address": "1701 Southwest Parkway, Suite 111, College Station, TX 77840",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 5096,
+    "discount": null,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 5096,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "DUE UPON PRESENTATION OF INVOICE",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Phase I Environmental Site Assessment",
+        "quantity": 1,
+        "unit_price": 7280,
+        "line_total": 7280,
+        "line_discount": null,
+        "item_code": null,
+        "unit": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Statement of Account",
+        "value": "Contract Amount: $7,280.00\nAmount Previously Billed: $2,184.00\nTotal Due this Invoice: $5,096.00\nTotal Billed: $7,280.00\nPayments to Date: $0.00\nTotal Due: $7,280.00"
+      },
+      {
+        "label": "Note",
+        "value": "100% completion has been billed to date."
+      }
+    ],
+    "notes": [],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1694,
+    "output_tokens": 510,
+    "cost_usd": 9e-05,
+    "seconds": 31.1
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 7,280, which matches neither the subtotal (5,096) nor the total (5,096)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Terracon Consultants, Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "TP13676",
+    "invoice_date": "2025-01-07",
+    "due_date": "2025-01-07",
+    "delivery_date": null,
+    "order_number": "95705",
+    "supplier_name": "Terracon Consultants, Inc.",
+    "supplier_address": "PO Box 959673, St Louis, MO 63195-9673",
+    "supplier_phone": "42-1249917",
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Binkley & Barfield",
+    "customer_address": "1701 Southwest Parkway, Suite 111, College Station, TX 77840",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 5096,
+    "discount": null,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 5096,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "DUE UPON PRESENTATION OF INVOICE",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Phase I Environmental Site Assessment",
+        "quantity": 1,
+        "unit_price": 7280,
+        "line_total": 7280,
+        "line_discount": null,
+        "item_code": null,
+        "unit": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Statement of Account",
+        "value": "Contract Amount: $7,280.00Amount Previously Billed: $2,184.00Total Due this Invoice: $5,096.00Total Billed: $7,280.00Payments to Date: $0.00Total Due: $7,280.00"
+      },
+      {
+        "label": "Note",
+        "value": "100% completion has been billed to date."
+      }
+    ],
+    "notes": [],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:17:24",
+    "edits": 1
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 7,280, which matches neither the subtotal (5,096) nor the total (5,096)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Terracon Consultants, Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 14,
+    "lines_written": 1,
+    "lines_sheet_rows": 39,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:17",
+    "verified": true,
+    "verified_total": 5096,
+    "verified_supplier": "Terracon Consultants, Inc.",
+    "file_bytes": 13461
+  }
+}

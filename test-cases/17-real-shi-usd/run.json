@@ -1,0 +1,235 @@
+{
+  "run_id": "20261115-141959-87e2",
+  "created": "2026-11-15T14:19:59",
+  "source": "upload",
+  "meta": {
+    "filename": "real shi invoice english usd  .pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-141959-87e2.jpg",
+  "pages": [
+    "20261115-141959-87e2.jpg"
+  ],
+  "original": "20261115-141959-87e2-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "2e2435ecba5ea7fb53af45b65a5141758376a00974a289d0841dcc3a04284f9d",
+  "image_phash": "ac488cc88c0440c0e4d084d290463000b0009440000000cc02cc00c40008000c",
+  "started": "2026-11-15T14:19:59",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "GB00546000",
+    "invoice_date": "2024-11-29",
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": "GS00829627",
+    "supplier_name": "SHI Government Solutions Inc.",
+    "supplier_address": "P.O. Box 847434, 3828 Pecana Trail, Dallas, TX 75284-7434",
+    "supplier_phone": "800-845-6801",
+    "supplier_email": "GSremittance@shi.com",
+    "supplier_tax_id": null,
+    "customer_name": "CITY OF MISSION",
+    "customer_address": "1201 E 8th St, Mission, TX 78752-5812",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 63194.4,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 63194.4,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "NET 30",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Office365PlanG1 ShrdSvr ALNG SubsVL MVL",
+        "quantity": 670,
+        "unit_price": 94.32,
+        "line_total": 63194.4,
+        "item_code": "27269204",
+        "unit": "U4S-00002",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Contract number",
+        "value": "DIR-CPO-5237"
+      },
+      {
+        "label": "Agreement Name",
+        "value": "The State of Texas, acting by and through the Department of"
+      },
+      {
+        "label": "Enrollment No.",
+        "value": "61623656"
+      },
+      {
+        "label": "Country of Usage",
+        "value": "USA"
+      },
+      {
+        "label": "Maintenance From date",
+        "value": "12/1/2024"
+      },
+      {
+        "label": "Maintenance To date",
+        "value": "11/30/2025"
+      }
+    ],
+    "notes": [
+      "Bank of America",
+      "Accnt #00479584371",
+      "ACH ABA# 111000025",
+      "Wire ABA# 026009593",
+      "Finance charge of 1.5% per month will be charged on past due accounts-18% per year.",
+      "All returns require an RMA number supplied by your SHI GS sales team."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1694,
+    "output_tokens": 782,
+    "cost_usd": 0.00012,
+    "seconds": 43.4
+  },
+  "check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “SHI Government Solutions Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "GB00546000",
+    "invoice_date": "2024-11-29",
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": "GS00829627",
+    "supplier_name": "SHI Government Solutions Inc.",
+    "supplier_address": "P.O. Box 847434, 3828 Pecana Trail, Dallas, TX 75284-7434",
+    "supplier_phone": "800-845-6801",
+    "supplier_email": "GSremittance@shi.com",
+    "supplier_tax_id": null,
+    "customer_name": "CITY OF MISSION",
+    "customer_address": "1201 E 8th St, Mission, TX 78752-5812",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 63194.4,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 63194.4,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "NET 30",
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Office365PlanG1 ShrdSvr ALNG SubsVL MVL",
+        "quantity": 670,
+        "unit_price": 94.32,
+        "line_total": 63194.4,
+        "item_code": "27269204",
+        "unit": "U4S-00002",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Contract number",
+        "value": "DIR-CPO-5237"
+      },
+      {
+        "label": "Agreement Name",
+        "value": "The State of Texas, acting by and through the Department of"
+      },
+      {
+        "label": "Enrollment No.",
+        "value": "61623656"
+      },
+      {
+        "label": "Country of Usage",
+        "value": "USA"
+      },
+      {
+        "label": "Maintenance From date",
+        "value": "12/1/2024"
+      },
+      {
+        "label": "Maintenance To date",
+        "value": "11/30/2025"
+      }
+    ],
+    "notes": [
+      "Bank of America",
+      "Accnt #00479584371",
+      "ACH ABA# 111000025",
+      "Wire ABA# 026009593",
+      "Finance charge of 1.5% per month will be charged on past due accounts-18% per year.",
+      "All returns require an RMA number supplied by your SHI GS sales team."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:21:15",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “SHI Government Solutions Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 15,
+    "lines_written": 1,
+    "lines_sheet_rows": 40,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:21",
+    "verified": true,
+    "verified_total": 63194.4,
+    "verified_supplier": "SHI Government Solutions Inc.",
+    "file_bytes": 14182
+  }
+}

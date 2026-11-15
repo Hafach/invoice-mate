@@ -1,0 +1,309 @@
+{
+  "run_id": "20261115-134250-ea81",
+  "created": "2026-11-15T13:42:50",
+  "source": "upload",
+  "meta": {
+    "filename": "Real FedEx Invoice english With Discount.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-134250-ea81.jpg",
+  "pages": [
+    "20261115-134250-ea81.jpg"
+  ],
+  "original": "20261115-134250-ea81-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "1280bdc1c54063b9c92479f0ad79d3f9c3b62031bfa1d43f2ed7c4db489e78d5",
+  "image_phash": "c030c236840684a6e152f2a6c2a10558100000084201d0cc9acc8f13f0d4db54",
+  "started": "2026-11-15T13:42:50",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "4401000101165",
+    "invoice_date": "2021-11-13",
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": "0000",
+    "supplier_name": "FedEx Office",
+    "supplier_address": "712 S STAGECOACH TRL, STE S 1071, SAN MARCOS, TX 78666-5999",
+    "supplier_phone": "512.395.4214",
+    "supplier_email": "cas.webmaster@fedex.com",
+    "supplier_tax_id": null,
+    "customer_name": "Wesley Matthews",
+    "customer_address": "HAYS COUNTY, 712 S STAGECOACH TRL, STE S 1071, SAN MARCOS, TX 78666-5999",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 96.75,
+    "discount": 10.75,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 96.75,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "400 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "400",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "500 D/PC Color Quick Cards (In)",
+        "quantity": 1,
+        "unit_price": 50.0,
+        "line_total": 50.0,
+        "unit": "500",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "Digital Enhancement",
+        "quantity": 1,
+        "unit_price": 7.5,
+        "line_total": 7.5,
+        "unit": "1",
+        "line_discount": null,
+        "item_code": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "FedEx Office Location",
+        "value": "San Marcos TX, 303 N Edward Gary St, San Marcos, TX 78666, 512.726.2362"
+      },
+      {
+        "label": "PLEASE REMIT TO",
+        "value": "FEDEX OFFICE, CUSTOMER ADMINISTRATIVE SERVICES, P.O. BOX 672085, DALLAS, TX 75267-2085"
+      }
+    ],
+    "notes": [
+      "FedEx Office requires notification of a billing error or dispute within 60 days of the invoice date",
+      "Electronically reproduced copy of original"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [
+      "due_date"
+    ],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1694,
+    "output_tokens": 902,
+    "cost_usd": 0.00014,
+    "seconds": 49.7
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "uncertain",
+        "msg": "AI not sure about: due_date"
+      },
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 96.75 - discount 10.75 + VAT 0 = 86, invoice total says 96.75."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “FedEx Office”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "4401000101165",
+    "invoice_date": "2021-11-13",
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": "0000",
+    "supplier_name": "FedEx Office",
+    "supplier_address": "712 S STAGECOACH TRL, STE S 1071, SAN MARCOS, TX 78666-5999",
+    "supplier_phone": "512.395.4214",
+    "supplier_email": "cas.webmaster@fedex.com",
+    "supplier_tax_id": null,
+    "customer_name": "Wesley Matthews",
+    "customer_address": "HAYS COUNTY, 712 S STAGECOACH TRL, STE S 1071, SAN MARCOS, TX 78666-5999",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 96.75,
+    "discount": 10.75,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 96.75,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "100 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "100",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "400 Color D/S Business Cards I",
+        "quantity": 1,
+        "unit_price": 12.5,
+        "line_total": 12.5,
+        "unit": "400",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "500 D/PC Color Quick Cards (In)",
+        "quantity": 1,
+        "unit_price": 50,
+        "line_total": 50,
+        "unit": "500",
+        "line_discount": null,
+        "item_code": null
+      },
+      {
+        "description": "Digital Enhancement",
+        "quantity": 1,
+        "unit_price": 7.5,
+        "line_total": 7.5,
+        "unit": "1",
+        "line_discount": null,
+        "item_code": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "FedEx Office Location",
+        "value": "San Marcos TX, 303 N Edward Gary St, San Marcos, TX 78666, 512.726.2362"
+      },
+      {
+        "label": "PLEASE REMIT TO",
+        "value": "FEDEX OFFICE, CUSTOMER ADMINISTRATIVE SERVICES, P.O. BOX 672085, DALLAS, TX 75267-2085"
+      }
+    ],
+    "notes": [
+      "FedEx Office requires notification of a billing error or dispute within 60 days of the invoice date",
+      "Electronically reproduced copy of original"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [
+      "due_date"
+    ],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T13:43:53",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "uncertain",
+        "msg": "AI not sure about: due_date"
+      },
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 96.75 - discount 10.75 + VAT 0 = 86, invoice total says 96.75."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “FedEx Office”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 10,
+    "lines_written": 6,
+    "lines_sheet_rows": 30,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 13:43",
+    "verified": true,
+    "verified_total": 96.75,
+    "verified_supplier": "FedEx Office",
+    "file_bytes": 11339
+  }
+}

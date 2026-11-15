@@ -1,0 +1,221 @@
+{
+  "run_id": "20261115-140530-00fc",
+  "created": "2026-11-15T14:05:30",
+  "source": "upload",
+  "meta": {
+    "filename": "English Missing Invoice Date.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-140530-00fc.jpg",
+  "pages": [
+    "20261115-140530-00fc.jpg"
+  ],
+  "original": "20261115-140530-00fc-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "914f13360dbe66a67d3ba5390d18917a78717156fe7825f37a21bc7934f7bcbb",
+  "image_phash": "e006c006d184d19cd188f548c0f4d0b444c400cc00cc000100000400d000d000",
+  "started": "2026-11-15T14:05:31",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CDW-1048",
+    "invoice_date": null,
+    "due_date": "2026-12-05",
+    "delivery_date": null,
+    "order_number": "PO-8214",
+    "supplier_name": "Cedar Demo Wholesale",
+    "supplier_address": "Food and packaging supplies",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Harbor Corner Mini Market",
+    "customer_address": null,
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 112.0,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": 0.0,
+    "total": 112.0,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Long-grain rice, 5 kg",
+        "quantity": 6,
+        "unit_price": 8.5,
+        "line_total": 51.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Canned chickpeas, case of 12",
+        "quantity": 4,
+        "unit_price": 10.75,
+        "line_total": 43.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Paper grocery bags, bundle of 50",
+        "quantity": 3,
+        "unit_price": 6.0,
+        "line_total": 18.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Fictional document for software testing"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1694,
+    "output_tokens": 503,
+    "cost_usd": 8e-05,
+    "seconds": 30.5
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "missing_invoice_date",
+        "msg": "Date not found on the invoice."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Cedar Demo Wholesale”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CDW-1048",
+    "invoice_date": null,
+    "due_date": "2026-12-05",
+    "delivery_date": null,
+    "order_number": "PO-8214",
+    "supplier_name": "Cedar Demo Wholesale",
+    "supplier_address": "Food and packaging supplies",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Harbor Corner Mini Market",
+    "customer_address": null,
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 112,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 112,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Long-grain rice, 5 kg",
+        "quantity": 6,
+        "unit_price": 8.5,
+        "line_total": 51,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Canned chickpeas, case of 12",
+        "quantity": 4,
+        "unit_price": 10.75,
+        "line_total": 43,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Paper grocery bags, bundle of 50",
+        "quantity": 3,
+        "unit_price": 6,
+        "line_total": 18,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Fictional document for software testing"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:06:11",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "missing_invoice_date",
+        "msg": "Date not found on the invoice."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Cedar Demo Wholesale”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 14,
+    "lines_written": 3,
+    "lines_sheet_rows": 41,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:06",
+    "verified": true,
+    "verified_total": 112,
+    "verified_supplier": "Cedar Demo Wholesale",
+    "file_bytes": 13231
+  }
+}

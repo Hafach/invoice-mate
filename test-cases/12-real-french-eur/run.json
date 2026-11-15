@@ -1,0 +1,185 @@
+{
+  "run_id": "20261115-140259-7f24",
+  "created": "2026-11-15T14:02:59",
+  "source": "upload",
+  "meta": {
+    "filename": "real french invoice eur.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-140259-7f24.jpg",
+  "pages": [
+    "20261115-140259-7f24.jpg"
+  ],
+  "original": "20261115-140259-7f24-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "4da0ba1703195e3beebeefccc755b3bc1282938f0c599401f9b0171af3454631",
+  "image_phash": "9000c094c0c0c2c0e0e20b40dd20c014c08cc520c128e0c86004c344c4000100",
+  "started": "2026-11-15T14:02:59",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CG212550",
+    "invoice_date": "2021-12-03",
+    "due_date": "2022-02-20",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Association des Maires de France et des présidents d'intercommunalité",
+    "supplier_address": "41 Quai d'Orsay, 75007 Paris, France",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": "784718445400027",
+    "customer_name": "HOTEL DE VILLE",
+    "customer_address": "106 AVENUE CLEMENCEAU, BP 80, CEDEX 69230 SAINT-GENIS-LAVAL, FRANCE",
+    "customer_tax_id": "21690204900016",
+    "currency": "EUR",
+    "subtotal": 95.0,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": null,
+    "total": 95.0,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": "Paiement par virement (payment to bank account) sur le compte IBAN (BIC) : FR4120041000011350831A02064 ( PSSTFRPPPAR )",
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Participation au 103ème congrès : MILLET Marylène",
+        "quantity": 1.0,
+        "unit_price": 95.0,
+        "line_total": 95.0,
+        "line_discount": null,
+        "item_code": null,
+        "unit": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Totaux du site de livraison, pour information :",
+        "value": "Brut HT 95.00\nRemises/charges à la ligne 0.00\nNet HT 95.00"
+      }
+    ],
+    "notes": [
+      "Nous vous remercions de votre règlement avant le : 20/02/2022"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 587,
+    "cost_usd": 0.0001,
+    "seconds": 34.4
+  },
+  "check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Association des Maires de France et des présidents d'intercommunalité”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CG212550",
+    "invoice_date": "2021-12-03",
+    "due_date": "2022-02-20",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Association des Maires de France et des présidents d'intercommunalité",
+    "supplier_address": "41 Quai d'Orsay, 75007 Paris, France",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": "784718445400027",
+    "customer_name": "HOTEL DE VILLE",
+    "customer_address": "106 AVENUE CLEMENCEAU, BP 80, CEDEX 69230 SAINT-GENIS-LAVAL, FRANCE",
+    "customer_tax_id": "21690204900016",
+    "currency": "EUR",
+    "subtotal": 95,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": null,
+    "total": 95,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": "Paiement par virement (payment to bank account) sur le compte IBAN (BIC) : FR4120041000011350831A02064 ( PSSTFRPPPAR )",
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Participation au 103ème congrès : MILLET Marylène",
+        "quantity": 1,
+        "unit_price": 95,
+        "line_total": 95,
+        "line_discount": null,
+        "item_code": null,
+        "unit": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "Totaux du site de livraison, pour information :",
+        "value": "Brut HT 95.00Remises/charges à la ligne 0.00Net HT 95.00"
+      }
+    ],
+    "notes": [
+      "Nous vous remercions de votre règlement avant le : 20/02/2022"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T14:03:42",
+    "edits": 1
+  },
+  "final_check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Association des Maires de France et des présidents d'intercommunalité”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 13,
+    "lines_written": 1,
+    "lines_sheet_rows": 38,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 14:03",
+    "verified": true,
+    "verified_total": 95,
+    "verified_supplier": "Association des Maires de France et des présidents d'intercommunalité",
+    "file_bytes": 12859
+  }
+}

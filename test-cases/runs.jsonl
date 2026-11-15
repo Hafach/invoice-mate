@@ -1,0 +1,36 @@
+{"run_id": "20261115-130028-82bc", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "pages": 2, "input_tokens": 3348, "output_tokens": 1202, "cost_usd": 0.00019, "seconds": 65.9}
+{"run_id": "20261115-130028-82bc", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-132945-3766", "event": "extracted", "status": "ready", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 604, "cost_usd": 0.0001, "seconds": 35.3}
+{"run_id": "20261115-132945-3766", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-133140-9132", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 586, "cost_usd": 0.0001, "seconds": 34.4}
+{"run_id": "20261115-133140-9132", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-133229-58c5", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 586, "cost_usd": 0.0001, "seconds": 34.5}
+{"run_id": "20261115-133229-58c5", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-133629-5f1e", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 654, "cost_usd": 0.00011, "seconds": 37.9}
+{"run_id": "20261115-133629-5f1e", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-133859-49bd", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 622, "cost_usd": 0.00026, "seconds": 95.3}
+{"run_id": "20261115-133859-49bd", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-134056-3f22", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 536, "cost_usd": 9e-05, "seconds": 31.9}
+{"run_id": "20261115-134056-3f22", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-134159-f223", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 506, "cost_usd": 9e-05, "seconds": 30.8}
+{"run_id": "20261115-134159-f223", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-134250-ea81", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 902, "cost_usd": 0.00014, "seconds": 49.7}
+{"run_id": "20261115-134250-ea81", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-134535-d5f9", "event": "extracted", "status": "ready", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1701, "output_tokens": 601, "cost_usd": 0.0001, "seconds": 35.3}
+{"run_id": "20261115-134535-d5f9", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-140259-7f24", "event": "extracted", "status": "ready", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 587, "cost_usd": 0.0001, "seconds": 34.4}
+{"run_id": "20261115-140259-7f24", "event": "approved", "edits": 1, "human_needed": true}
+{"run_id": "20261115-140351-f776", "event": "extracted", "status": "blocked", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 694, "cost_usd": 0.00011, "seconds": 39.1}
+{"run_id": "20261115-140530-00fc", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 503, "cost_usd": 8e-05, "seconds": 30.5}
+{"run_id": "20261115-140530-00fc", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-141515-f9fe", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 510, "cost_usd": 9e-05, "seconds": 31.1}
+{"run_id": "20261115-141515-f9fe", "event": "approved", "edits": 1, "human_needed": true}
+{"run_id": "20261115-141743-5e57", "event": "extracted", "status": "blocked", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1677, "output_tokens": 760, "cost_usd": 0.00012, "seconds": 42.3}
+{"run_id": "20261115-141959-87e2", "event": "extracted", "status": "ready", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 782, "cost_usd": 0.00012, "seconds": 43.4}
+{"run_id": "20261115-141959-87e2", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-142125-5a38", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 790, "cost_usd": 0.00027, "seconds": 97.1}
+{"run_id": "20261115-142125-5a38", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-142332-00b2", "event": "extracted", "status": "ready", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1674, "output_tokens": 733, "cost_usd": 0.00011, "seconds": 41.2}
+{"run_id": "20261115-142332-00b2", "event": "approved", "edits": 0, "human_needed": false}
+{"run_id": "20261115-142441-30a0", "event": "extracted", "status": "needs_review", "model": "qwen2.5vl:3b (on Jetson)", "input_tokens": 1694, "output_tokens": 498, "cost_usd": 8e-05, "seconds": 30.2}
+{"run_id": "20261115-142441-30a0", "event": "approved", "edits": 0, "human_needed": false}

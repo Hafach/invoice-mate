@@ -1,0 +1,247 @@
+{
+  "run_id": "20261115-133629-5f1e",
+  "created": "2026-11-15T13:36:29",
+  "source": "upload",
+  "meta": {
+    "filename": "Arabic USD Invoice With Discount.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-133629-5f1e.jpg",
+  "pages": [
+    "20261115-133629-5f1e.jpg"
+  ],
+  "original": "20261115-133629-5f1e-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "95bfd718ae36fc2b1a54803aa129f9853e7ebc5f0fef2022fcc2e14827fa3b90",
+  "image_phash": "80e080c0d990d990f9880080c424cac44850d8d06400e000e8000000c000c000",
+  "started": "2026-11-15T13:36:29",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6318",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي الديان",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 108.0,
+    "discount": null,
+    "vat_rate": 10,
+    "vat_amount": 10.8,
+    "other_charges": 0.0,
+    "total": 97.2,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "سائل جلي، عبوة 1 لتر",
+        "quantity": 12,
+        "unit_price": 3.25,
+        "line_total": 39.0,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      },
+      {
+        "description": "مناديل ورقية، عبوة 6 عب",
+        "quantity": 6,
+        "unit_price": 7.5,
+        "line_total": 45.0,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      },
+      {
+        "description": "أكياس نفايات، لفة 20 كيسًا",
+        "quantity": 10,
+        "unit_price": 2.4,
+        "line_total": 24.0,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "108.00"
+      },
+      {
+        "label": "الضريبة",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "97.20"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 654,
+    "cost_usd": 0.00011,
+    "seconds": 37.9
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 108 - discount 0 + VAT 10.8 = 118.8, invoice total says 97.2."
+      },
+      {
+        "level": "info",
+        "code": "vat_rate",
+        "msg": "VAT is 10.0% of the subtotal (standard rate 11%)."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6318",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي الديان",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 108,
+    "discount": null,
+    "vat_rate": 10,
+    "vat_amount": 10.8,
+    "other_charges": 0,
+    "total": 97.2,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "سائل جلي، عبوة 1 لتر",
+        "quantity": 12,
+        "unit_price": 3.25,
+        "line_total": 39,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      },
+      {
+        "description": "مناديل ورقية، عبوة 6 عب",
+        "quantity": 6,
+        "unit_price": 7.5,
+        "line_total": 45,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      },
+      {
+        "description": "أكياس نفايات، لفة 20 كيسًا",
+        "quantity": 10,
+        "unit_price": 2.4,
+        "line_total": 24,
+        "item_code": null,
+        "unit": "USD / unit",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "108.00"
+      },
+      {
+        "label": "الضريبة",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "97.20"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T13:37:35",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "total_math",
+        "msg": "Subtotal 108 - discount 0 + VAT 10.8 = 118.8, invoice total says 97.2."
+      },
+      {
+        "level": "info",
+        "code": "vat_rate",
+        "msg": "VAT is 10.0% of the subtotal (standard rate 11%)."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 6,
+    "lines_written": 3,
+    "lines_sheet_rows": 15,
+    "supplier_added": false,
+    "saved_at": "2026-11-15 13:37",
+    "verified": true,
+    "verified_total": 97.2,
+    "verified_supplier": "شركة جسر الأرز للتوريد",
+    "file_bytes": 9535
+  }
+}

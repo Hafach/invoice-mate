@@ -37,6 +37,9 @@ python server.py              # open http://127.0.0.1:8400
 
 **Building the 20 real cases:** in the UI, read each real invoice, correct the fields to match the paper, then click **Save as test case**.
 
+## Test results: 20 real cases
+See **[test-cases/](test-cases/)**: 20 invoices run through the app on the Jetson. 9/9 planted errors caught, both duplicates blocked, 0 silent errors. Each case has its original file, the AI's reading and the approval record.
+
 ## Scoring map
 | Criterion | Where |
 |---|---|

@@ -1,0 +1,260 @@
+{
+  "run_id": "20261115-130028-82bc",
+  "created": "2026-11-15T13:00:28",
+  "source": "upload",
+  "meta": {
+    "filename": "real invoice repeated on 2 pages same.pdf",
+    "kind": "pdf",
+    "pages": 2
+  },
+  "image": "20261115-130028-82bc.jpg",
+  "pages": [
+    "20261115-130028-82bc.jpg",
+    "20261115-130028-82bc-p2.jpg"
+  ],
+  "original": "20261115-130028-82bc-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 2,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "b148f2cafe13227ee8e1c937b098673add63610d364dcea3e23ccd4195ae9a47",
+  "image_phash": "00908190a190209061809622a622261a066200e202a28684e6ccaac8b970c102",
+  "started": "2026-11-15T13:00:28",
+  "reading_page": 2,
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INUS246263",
+    "invoice_date": null,
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Axon Enterprise Inc.",
+    "supplier_address": "PO BOX 29661, PHOENIX, AZ 85038-9661",
+    "supplier_phone": "1-480-991-0797, option 5, option 1",
+    "supplier_email": "ar inquiries@axon.com",
+    "supplier_tax_id": null,
+    "customer_name": "Stephenville Police Dept.- TX",
+    "customer_address": "356 N Belknap St, Stephenville, TX 76401-3414 USA",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 8480.7,
+    "discount": null,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 8480.7,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "Net 30 days",
+    "payment_method": "ACH/EFT Payment",
+    "amount_paid": 0,
+    "balance_due": 8480.7,
+    "bank_details": "Account Name: Axon Enterprise, Inc. Account Number: 634912729 Bank Routing No: 122100024 SWIFT Code: CHASUS33",
+    "lines": [
+      {
+        "description": "AXON FLEET 3 - ALPR LICENSE - 1 CAMERA",
+        "quantity": 14.0,
+        "unit_price": 2230.2,
+        "line_total": 29222.8,
+        "item_code": "80401",
+        "unit": "1",
+        "line_discount": null
+      },
+      {
+        "description": "AXON FLEET 3 - SERVICES - ALPR API INTEGRATION",
+        "quantity": 1.0,
+        "unit_price": 2700.0,
+        "line_total": 2700.0,
+        "item_code": "100159",
+        "unit": "1",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "SHIP TO",
+        "value": "Stephenville Police Dept.- TX 356 N Belknap St, Stephenville, TX 76401-3414 USA"
+      },
+      {
+        "label": "Important Note",
+        "value": "By selecting the wire transfer payment method, you agree to accept the processing & transaction fees charged by the bank relating to this wire"
+      }
+    ],
+    "notes": [
+      "Please reference the invoice number on your ACH, Wire or Check payment and send to AR@axon.com"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [
+      "invoice_date",
+      "due_date"
+    ],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "pages": 2,
+    "input_tokens": 3348,
+    "output_tokens": 1202,
+    "cost_usd": 0.00019,
+    "seconds": 65.9
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "missing_invoice_date",
+        "msg": "Date not found on the invoice."
+      },
+      {
+        "level": "warn",
+        "code": "uncertain",
+        "msg": "AI not sure about: invoice_date, due_date"
+      },
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 1 (AXON FLEET 3 - ALPR LICENSE - 1 CAMERA): 14 x 2,230.2 = 31,222.8, invoice says 29,222.8."
+      },
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 31,922.8, which matches neither the subtotal (8,480.7) nor the total (8,480.7)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Axon Enterprise Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "INUS246263",
+    "invoice_date": null,
+    "due_date": null,
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Axon Enterprise Inc.",
+    "supplier_address": "PO BOX 29661, PHOENIX, AZ 85038-9661",
+    "supplier_phone": "1-480-991-0797, option 5, option 1",
+    "supplier_email": "ar inquiries@axon.com",
+    "supplier_tax_id": null,
+    "customer_name": "Stephenville Police Dept.- TX",
+    "customer_address": "356 N Belknap St, Stephenville, TX 76401-3414 USA",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 8480.7,
+    "discount": null,
+    "vat_rate": null,
+    "vat_amount": null,
+    "other_charges": null,
+    "total": 8480.7,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": "Net 30 days",
+    "payment_method": "ACH/EFT Payment",
+    "amount_paid": 0,
+    "balance_due": 8480.7,
+    "bank_details": "Account Name: Axon Enterprise, Inc. Account Number: 634912729 Bank Routing No: 122100024 SWIFT Code: CHASUS33",
+    "lines": [
+      {
+        "description": "AXON FLEET 3 - ALPR LICENSE - 1 CAMERA",
+        "quantity": 14,
+        "unit_price": 2230.2,
+        "line_total": 29222.8,
+        "item_code": "80401",
+        "unit": "1",
+        "line_discount": null
+      },
+      {
+        "description": "AXON FLEET 3 - SERVICES - ALPR API INTEGRATION",
+        "quantity": 1,
+        "unit_price": 2700,
+        "line_total": 2700,
+        "item_code": "100159",
+        "unit": "1",
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "SHIP TO",
+        "value": "Stephenville Police Dept.- TX 356 N Belknap St, Stephenville, TX 76401-3414 USA"
+      },
+      {
+        "label": "Important Note",
+        "value": "By selecting the wire transfer payment method, you agree to accept the processing & transaction fees charged by the bank relating to this wire"
+      }
+    ],
+    "notes": [
+      "Please reference the invoice number on your ACH, Wire or Check payment and send to AR@axon.com"
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [
+      "invoice_date",
+      "due_date"
+    ],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "test6",
+    "at": "2026-11-15T13:01:52",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "missing_invoice_date",
+        "msg": "Date not found on the invoice."
+      },
+      {
+        "level": "warn",
+        "code": "uncertain",
+        "msg": "AI not sure about: invoice_date, due_date"
+      },
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 1 (AXON FLEET 3 - ALPR LICENSE - 1 CAMERA): 14 x 2,230.2 = 31,222.8, invoice says 29,222.8."
+      },
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 31,922.8, which matches neither the subtotal (8,480.7) nor the total (8,480.7)."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Axon Enterprise Inc.”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 2,
+    "lines_written": 2,
+    "lines_sheet_rows": 3,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 13:01",
+    "verified": true,
+    "verified_total": 8480.7,
+    "verified_supplier": "Axon Enterprise Inc.",
+    "file_bytes": 7661
+  }
+}

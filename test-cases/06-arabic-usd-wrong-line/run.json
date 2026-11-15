@@ -1,0 +1,237 @@
+{
+  "run_id": "20261115-133859-49bd",
+  "created": "2026-11-15T13:38:59",
+  "source": "upload",
+  "meta": {
+    "filename": "Arabic USD Invoice Wrong Line Amount.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-133859-49bd.jpg",
+  "pages": [
+    "20261115-133859-49bd.jpg"
+  ],
+  "original": "20261115-133859-49bd-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "d0dfdc50c79ad9ca5d1d837cebfc81724594b1b0e82fa34bbb43e3041d6e07de",
+  "image_phash": "8ae080c099909990f9880081c424cac44841dad06008e80088000800c000c000",
+  "started": "2026-11-15T13:39:00",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6317",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي البناء",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 113.0,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": 0.0,
+    "total": 113.0,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "سائل جلي، عبوة 1 لتر",
+        "quantity": 12,
+        "unit_price": 3.25,
+        "line_total": 39.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "مناديل ورقية، عبوة 6 عب",
+        "quantity": 6,
+        "unit_price": 7.5,
+        "line_total": 45.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "أكياس نفايات، لفة 20 كيشا",
+        "quantity": 10,
+        "unit_price": 2.4,
+        "line_total": 24.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "113.00"
+      },
+      {
+        "label": "الضريبية",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "113.00"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 622,
+    "cost_usd": 0.00026,
+    "seconds": 95.3
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 108, which matches neither the subtotal (113) nor the total (113)."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6317",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي البناء",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 113,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 113,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "سائل جلي، عبوة 1 لتر",
+        "quantity": 12,
+        "unit_price": 3.25,
+        "line_total": 39,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "مناديل ورقية، عبوة 6 عب",
+        "quantity": 6,
+        "unit_price": 7.5,
+        "line_total": 45,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "أكياس نفايات، لفة 20 كيشا",
+        "quantity": 10,
+        "unit_price": 2.4,
+        "line_total": 24,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "113.00"
+      },
+      {
+        "label": "الضريبية",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "113.00"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T13:40:41",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "sum_math",
+        "msg": "Item lines add up to 108, which matches neither the subtotal (113) nor the total (113)."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 7,
+    "lines_written": 3,
+    "lines_sheet_rows": 18,
+    "supplier_added": false,
+    "saved_at": "2026-11-15 13:40",
+    "verified": true,
+    "verified_total": 113,
+    "verified_supplier": "شركة جسر الأرز للتوريد",
+    "file_bytes": 9806
+  }
+}

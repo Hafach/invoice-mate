@@ -1,0 +1,237 @@
+{
+  "run_id": "20261115-132945-3766",
+  "created": "2026-11-15T13:29:45",
+  "source": "upload",
+  "meta": {
+    "filename": "Arabic USD Invoice.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-132945-3766.jpg",
+  "pages": [
+    "20261115-132945-3766.jpg"
+  ],
+  "original": "20261115-132945-3766-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "df506fb7d2931a1be21718a996fdf362109bfc54221493afbb447392b14eb51b",
+  "image_phash": "8ae080c0d990d990f9880081c424cae448c1c8c86e20ee0011000800c000c000",
+  "started": "2026-11-15T13:29:45",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6320",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي البناء",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 96.0,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": 0.0,
+    "total": 96.0,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "مياه معدنية، صندوق",
+        "quantity": 8,
+        "unit_price": 4.5,
+        "line_total": 36.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "بسكويت باشوكولاتة، صندوق",
+        "quantity": 5,
+        "unit_price": 6.2,
+        "line_total": 31.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "شاي أسود، علية",
+        "quantity": 4,
+        "unit_price": 7.25,
+        "line_total": 29.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "96.00"
+      },
+      {
+        "label": "الضرارية",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "96.00"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1674,
+    "output_tokens": 604,
+    "cost_usd": 0.0001,
+    "seconds": 35.3
+  },
+  "check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “شركة جسر الأرز للتوريد”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "JAT-6320",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "شركة جسر الأرز للتوريد",
+    "supplier_address": "بيروت, لبنان",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "متجر حي البناء",
+    "customer_address": "جبيل, لبنان",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 96,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 96,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "مياه معدنية، صندوق",
+        "quantity": 8,
+        "unit_price": 4.5,
+        "line_total": 36,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "بسكويت باشوكولاتة، صندوق",
+        "quantity": 5,
+        "unit_price": 6.2,
+        "line_total": 31,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "شاي أسود، علية",
+        "quantity": 4,
+        "unit_price": 7.25,
+        "line_total": 29,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [
+      {
+        "label": "المجموع الفرعي",
+        "value": "96.00"
+      },
+      {
+        "label": "الضرارية",
+        "value": "0.00"
+      },
+      {
+        "label": "الإجمالي المستحق",
+        "value": "96.00"
+      }
+    ],
+    "notes": [
+      "وثيقة خيالية لاختيار النظام فقط."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T13:30:27",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "ready",
+    "findings": [
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “شركة جسر الأرز للتوريد”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 3,
+    "lines_written": 3,
+    "lines_sheet_rows": 6,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 13:30",
+    "verified": true,
+    "verified_total": 96,
+    "verified_supplier": "شركة جسر الأرز للتوريد",
+    "file_bytes": 8391
+  }
+}

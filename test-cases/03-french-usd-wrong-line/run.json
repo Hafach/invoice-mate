@@ -1,0 +1,221 @@
+{
+  "run_id": "20261115-133140-9132",
+  "created": "2026-11-15T13:31:40",
+  "source": "upload",
+  "meta": {
+    "filename": "French USD Invoice Wrong Line Amount.pdf",
+    "kind": "pdf",
+    "pages": 1
+  },
+  "image": "20261115-133140-9132.jpg",
+  "pages": [
+    "20261115-133140-9132.jpg"
+  ],
+  "original": "20261115-133140-9132-original.pdf",
+  "doc_kind": "pdf",
+  "container": null,
+  "via": null,
+  "inner_name": null,
+  "total_pages": 1,
+  "skipped_pages": 0,
+  "state": "approved",
+  "media_type": "image/jpeg",
+  "mode": "full",
+  "image_sha256": "b44ea5f21445fd6fedf7df0731e1d2856baab01e02c3a862769bc0252b71e53e",
+  "image_phash": "d006d22ec98cc19cc118f894c134c1340acc00cc00cc000100440400c100c000",
+  "started": "2026-11-15T13:31:40",
+  "extracted": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CDL-2026-048",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Comptoir Démo du Levant",
+    "supplier_address": "Beyrouth, Liban",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Épicerie Démo du Port",
+    "customer_address": "Byblos, Liban",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 92.0,
+    "discount": null,
+    "vat_rate": 0.0,
+    "vat_amount": 0.0,
+    "other_charges": 0.0,
+    "total": 92.0,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Savon liquide, flacon de 500 ml",
+        "quantity": 10,
+        "unit_price": 3.2,
+        "line_total": 37.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Essuie-tout, paquet de 4",
+        "quantity": 6,
+        "unit_price": 5.5,
+        "line_total": 33.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Sacs-poubelle, rouleau de 20",
+        "quantity": 8,
+        "unit_price": 2.75,
+        "line_total": 22.0,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Document fictif destiné aux tests du logiciel."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "usage": {
+    "model": "qwen2.5vl:3b (on Jetson)",
+    "input_tokens": 1694,
+    "output_tokens": 586,
+    "cost_usd": 0.0001,
+    "seconds": 34.4
+  },
+  "check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 1 (Savon liquide, flacon de 500 ml): 10 x 3.2 = 32, invoice says 37."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Comptoir Démo du Levant”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "final": {
+    "is_invoice": true,
+    "document_type": "invoice",
+    "invoice_number": "CDL-2026-048",
+    "invoice_date": "2026-11-12",
+    "due_date": "2026-11-26",
+    "delivery_date": null,
+    "order_number": null,
+    "supplier_name": "Comptoir Démo du Levant",
+    "supplier_address": "Beyrouth, Liban",
+    "supplier_phone": null,
+    "supplier_email": null,
+    "supplier_tax_id": null,
+    "customer_name": "Épicerie Démo du Port",
+    "customer_address": "Byblos, Liban",
+    "customer_tax_id": null,
+    "currency": "USD",
+    "subtotal": 92,
+    "discount": null,
+    "vat_rate": 0,
+    "vat_amount": 0,
+    "other_charges": 0,
+    "total": 92,
+    "total_lbp": null,
+    "exchange_rate": null,
+    "payment_terms": null,
+    "payment_method": null,
+    "amount_paid": null,
+    "balance_due": null,
+    "bank_details": null,
+    "lines": [
+      {
+        "description": "Savon liquide, flacon de 500 ml",
+        "quantity": 10,
+        "unit_price": 3.2,
+        "line_total": 37,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Essuie-tout, paquet de 4",
+        "quantity": 6,
+        "unit_price": 5.5,
+        "line_total": 33,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      },
+      {
+        "description": "Sacs-poubelle, rouleau de 20",
+        "quantity": 8,
+        "unit_price": 2.75,
+        "line_total": 22,
+        "item_code": null,
+        "unit": null,
+        "line_discount": null
+      }
+    ],
+    "extra_fields": [],
+    "notes": [
+      "Document fictif destiné aux tests du logiciel."
+    ],
+    "instructions_in_image": null,
+    "readability": "good",
+    "uncertain_fields": [],
+    "currency_guessed": false
+  },
+  "approval": {
+    "decision": "approve",
+    "approved_by": "Clara Chayeb",
+    "at": "2026-11-15T13:32:20",
+    "edits": 0
+  },
+  "final_check": {
+    "status": "needs_review",
+    "findings": [
+      {
+        "level": "warn",
+        "code": "line_math",
+        "msg": "Line 1 (Savon liquide, flacon de 500 ml): 10 x 3.2 = 32, invoice says 37."
+      },
+      {
+        "level": "info",
+        "code": "new_supplier",
+        "msg": "New supplier “Comptoir Démo du Levant”: it will be added to the Suppliers sheet."
+      }
+    ],
+    "whatsapp_draft": null
+  },
+  "saved": {
+    "file": "ledger.xlsx",
+    "sheet": "Invoices",
+    "row": 4,
+    "lines_written": 3,
+    "lines_sheet_rows": 9,
+    "supplier_added": true,
+    "saved_at": "2026-11-15 13:32",
+    "verified": true,
+    "verified_total": 92,
+    "verified_supplier": "Comptoir Démo du Levant",
+    "file_bytes": 8858
+  }
+}
